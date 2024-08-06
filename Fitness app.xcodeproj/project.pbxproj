@@ -13,6 +13,7 @@
 		DC9E909C2C6190850053D2A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC9E909B2C6190850053D2A0 /* Assets.xcassets */; };
 		DC9E909F2C6190850053D2A0 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DC9E909E2C6190850053D2A0 /* Base */; };
 		DC9E90AC2C619FD80053D2A0 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90AB2C619FD80053D2A0 /* CalendarView.swift */; };
+		DC9E90AE2C61C6150053D2A0 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90AD2C61C6150053D2A0 /* WeatherView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		DC9E909E2C6190850053D2A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC9E90A02C6190850053D2A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC9E90AB2C619FD80053D2A0 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		DC9E90AD2C61C6150053D2A0 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				DC9E90AB2C619FD80053D2A0 /* CalendarView.swift */,
+				DC9E90AD2C61C6150053D2A0 /* WeatherView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC9E90AE2C61C6150053D2A0 /* WeatherView.swift in Sources */,
 				DC9E90972C6190840053D2A0 /* MainViewController.swift in Sources */,
 				DC9E90932C6190840053D2A0 /* AppDelegate.swift in Sources */,
 				DC9E90AC2C619FD80053D2A0 /* CalendarView.swift in Sources */,
