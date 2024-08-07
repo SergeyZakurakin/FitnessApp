@@ -13,7 +13,8 @@ final class WeatherView: UIView {
     private let titleLabel: UILabel = {
         let element = UILabel()
         element.text = "Sunny"
-        element.textColor = .black
+        element.textColor = .specialGray
+        element.font = .robotoMedium18()
         
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
@@ -23,8 +24,8 @@ final class WeatherView: UIView {
         let element = UILabel()
         element.numberOfLines = 0
         element.text = "Perfect weather for outside training"
-        element.textColor = .black
-        element.font = .systemFont(ofSize: 12)
+        element.textColor = .specialGray
+        element.font = .robotoMedium14()
         
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
@@ -56,9 +57,11 @@ final class WeatherView: UIView {
         backgroundColor = .white
         self.layer.cornerRadius = 10
         
+        addShadowOnView()
+        
+        self.addSubview(weatherImageView)
         self.addSubview(titleLabel)
         self.addSubview(descriptionLabel)
-        self.addSubview(weatherImageView)
         
         translatesAutoresizingMaskIntoConstraints = false
     }
@@ -71,13 +74,17 @@ extension WeatherView {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
             titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            titleLabel.trailingAnchor.constraint(equalTo: weatherImageView.leadingAnchor, constant: -10),
             
             descriptionLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
             descriptionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            descriptionLabel.widthAnchor.constraint(equalToConstant: 200),
+            descriptionLabel.trailingAnchor.constraint(equalTo: weatherImageView.leadingAnchor, constant: -10),
+
             
             weatherImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            weatherImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
+            weatherImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            weatherImageView.heightAnchor.constraint(equalToConstant: 60),
+            weatherImageView.widthAnchor.constraint(equalToConstant: 60)
         ])
 
         

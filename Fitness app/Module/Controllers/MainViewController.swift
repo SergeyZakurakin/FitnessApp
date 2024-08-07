@@ -23,10 +23,10 @@ final class MainViewController: UIViewController {
     private let userNameLabel: UILabel = {
         let element = UILabel()
         element.text = "Your name"
-        element.textColor = .black
         element.numberOfLines = 0
         element.adjustsFontSizeToFitWidth = true
-        element.font = .systemFont(ofSize: 30)
+        element.font = .robotoMedium24()
+        element.textColor = .specialGray
         
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
@@ -34,8 +34,9 @@ final class MainViewController: UIViewController {
     
     private lazy var addWorkoutButton: UIButton = {
         let element = UIButton(type: .system)
-        element.backgroundColor = #colorLiteral(red: 0.9921568627, green: 0.8392156863, blue: 0.3568627451, alpha: 1)
-        element.tintColor = #colorLiteral(red: 0.1411764706, green: 0.2941176471, blue: 0.262745098, alpha: 1)
+        element.backgroundColor = .specialYellow
+        element.tintColor = .specialDarkGreen
+        element.titleLabel?.font = .robotoMedium12()
         element.imageEdgeInsets = .init(
             top: 0,
             left: 20,
@@ -48,7 +49,8 @@ final class MainViewController: UIViewController {
             bottom: 0,
             right: 0
         )
-        element.titleLabel?.font = .systemFont(ofSize: 12)
+        element.addShadowOnView()
+        
         element.layer.cornerRadius = 10
         element.setTitle("Add workout", for: .normal)
         element.setImage(UIImage(named: "plus"), for: .normal)
@@ -57,14 +59,15 @@ final class MainViewController: UIViewController {
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
     }()
-    
+    // зеленое вю на главный экран
     private let calendar = CalendarView()
-    
+    // белое вю с солнышком
     private let weatherView = WeatherView()
     
 
     //MARK: - Life Cycle
     override func viewDidLayoutSubviews() {
+        // лого аватар (радиус делим на размер чтоб было круглое)
         userImageImageView.layer.cornerRadius = userImageImageView.frame.width / 2
     }
     
@@ -77,7 +80,7 @@ final class MainViewController: UIViewController {
 
     //MARK: - Setup Views
     private func setupViews() {
-        view.backgroundColor = #colorLiteral(red: 0.9411764706, green: 0.9294117647, blue: 0.8862745098, alpha: 1)
+        view.backgroundColor = .specialBackground
         
         view.addSubview(calendar)
         view.addSubview(userImageImageView)
@@ -117,8 +120,8 @@ extension MainViewController {
             
             weatherView.topAnchor.constraint(equalTo: calendar.bottomAnchor, constant: 10),
             weatherView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            weatherView.leadingAnchor.constraint(equalTo: addWorkoutButton.trailingAnchor, constant: 10),
             weatherView.heightAnchor.constraint(equalToConstant: 80),
-            weatherView.widthAnchor.constraint(equalToConstant: 280)
             
         ])
         
