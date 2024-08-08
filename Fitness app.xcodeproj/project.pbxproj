@@ -14,13 +14,20 @@
 		DC9E909F2C6190850053D2A0 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DC9E909E2C6190850053D2A0 /* Base */; };
 		DC9E90AC2C619FD80053D2A0 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90AB2C619FD80053D2A0 /* CalendarView.swift */; };
 		DC9E90AE2C61C6150053D2A0 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90AD2C61C6150053D2A0 /* WeatherView.swift */; };
-		DC9E90B22C6302F30053D2A0 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90B12C6302F30053D2A0 /* UIView + Extension.swift */; };
+		DC9E90B22C6302F30053D2A0 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90B12C6302F30053D2A0 /* UIView + Extensions.swift */; };
 		DC9E90B82C6304EA0053D2A0 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC9E90B62C6304EA0053D2A0 /* Roboto-Bold.ttf */; };
 		DC9E90B92C6304EA0053D2A0 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC9E90B72C6304EA0053D2A0 /* Roboto-Medium.ttf */; };
-		DC9E90BB2C6307240053D2A0 /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90BA2C6307240053D2A0 /* UIFont + Extension.swift */; };
-		DC9E90BD2C6307CA0053D2A0 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90BC2C6307CA0053D2A0 /* UIColor + Extension.swift */; };
+		DC9E90BB2C6307240053D2A0 /* UIFont + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90BA2C6307240053D2A0 /* UIFont + Extensions.swift */; };
+		DC9E90BD2C6307CA0053D2A0 /* UIColor + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90BC2C6307CA0053D2A0 /* UIColor + Extensions.swift */; };
 		DC9E90BF2C63A7400053D2A0 /* CalendarCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90BE2C63A7400053D2A0 /* CalendarCollectionView.swift */; };
 		DC9E90C22C63ABAF0053D2A0 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90C12C63ABAF0053D2A0 /* CalendarCollectionViewCell.swift */; };
+		DC9E90C42C63E8E30053D2A0 /* UILabel + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90C32C63E8E30053D2A0 /* UILabel + Extensions.swift */; };
+		DC9E90C62C63ED970053D2A0 /* MainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90C52C63ED970053D2A0 /* MainTableView.swift */; };
+		DC9E90C82C63F3250053D2A0 /* StackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90C72C63F3250053D2A0 /* StackView + Extensions.swift */; };
+		DC9E90CA2C640BBA0053D2A0 /* WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90C92C640BBA0053D2A0 /* WorkoutTableViewCell.swift */; };
+		DC9E90CF2C6445050053D2A0 /* StatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90CE2C6445050053D2A0 /* StatisticViewController.swift */; };
+		DC9E90D12C644CE20053D2A0 /* StatisticTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90D02C644CE20053D2A0 /* StatisticTableView.swift */; };
+		DC9E90D42C644EAD0053D2A0 /* StatisticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90D32C644EAD0053D2A0 /* StatisticTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,13 +40,20 @@
 		DC9E90A02C6190850053D2A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC9E90AB2C619FD80053D2A0 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		DC9E90AD2C61C6150053D2A0 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
-		DC9E90B12C6302F30053D2A0 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		DC9E90B12C6302F30053D2A0 /* UIView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extensions.swift"; sourceTree = "<group>"; };
 		DC9E90B62C6304EA0053D2A0 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		DC9E90B72C6304EA0053D2A0 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
-		DC9E90BA2C6307240053D2A0 /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
-		DC9E90BC2C6307CA0053D2A0 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
+		DC9E90BA2C6307240053D2A0 /* UIFont + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extensions.swift"; sourceTree = "<group>"; };
+		DC9E90BC2C6307CA0053D2A0 /* UIColor + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extensions.swift"; sourceTree = "<group>"; };
 		DC9E90BE2C63A7400053D2A0 /* CalendarCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionView.swift; sourceTree = "<group>"; };
 		DC9E90C12C63ABAF0053D2A0 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
+		DC9E90C32C63E8E30053D2A0 /* UILabel + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extensions.swift"; sourceTree = "<group>"; };
+		DC9E90C52C63ED970053D2A0 /* MainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableView.swift; sourceTree = "<group>"; };
+		DC9E90C72C63F3250053D2A0 /* StackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView + Extensions.swift"; sourceTree = "<group>"; };
+		DC9E90C92C640BBA0053D2A0 /* WorkoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewCell.swift; sourceTree = "<group>"; };
+		DC9E90CE2C6445050053D2A0 /* StatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
+		DC9E90D02C644CE20053D2A0 /* StatisticTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticTableView.swift; sourceTree = "<group>"; };
+		DC9E90D32C644EAD0053D2A0 /* StatisticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,20 +87,21 @@
 			isa = PBXGroup;
 			children = (
 				DC9E90AA2C6192FE0053D2A0 /* Aplication */,
-				DC9E90A62C6192400053D2A0 /* Module */,
+				DC9E90A62C6192400053D2A0 /* MainModule */,
+				DC9E90CB2C6444990053D2A0 /* StatisticModule */,
 				DC9E90AF2C6302A60053D2A0 /* Extensions */,
 				DC9E90A92C6192840053D2A0 /* SuportingFiles */,
 			);
 			path = "Fitness app";
 			sourceTree = "<group>";
 		};
-		DC9E90A62C6192400053D2A0 /* Module */ = {
+		DC9E90A62C6192400053D2A0 /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
 				DC9E90A82C61926A0053D2A0 /* Views */,
 				DC9E90A72C61924E0053D2A0 /* Controllers */,
 			);
-			path = Module;
+			path = MainModule;
 			sourceTree = "<group>";
 		};
 		DC9E90A72C61924E0053D2A0 /* Controllers */ = {
@@ -104,6 +119,7 @@
 				DC9E90AB2C619FD80053D2A0 /* CalendarView.swift */,
 				DC9E90AD2C61C6150053D2A0 /* WeatherView.swift */,
 				DC9E90BE2C63A7400053D2A0 /* CalendarCollectionView.swift */,
+				DC9E90C52C63ED970053D2A0 /* MainTableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -139,9 +155,11 @@
 		DC9E90B02C6302D10053D2A0 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				DC9E90BC2C6307CA0053D2A0 /* UIColor + Extension.swift */,
-				DC9E90BA2C6307240053D2A0 /* UIFont + Extension.swift */,
-				DC9E90B12C6302F30053D2A0 /* UIView + Extension.swift */,
+				DC9E90BC2C6307CA0053D2A0 /* UIColor + Extensions.swift */,
+				DC9E90BA2C6307240053D2A0 /* UIFont + Extensions.swift */,
+				DC9E90B12C6302F30053D2A0 /* UIView + Extensions.swift */,
+				DC9E90C32C63E8E30053D2A0 /* UILabel + Extensions.swift */,
+				DC9E90C72C63F3250053D2A0 /* StackView + Extensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -159,6 +177,41 @@
 			isa = PBXGroup;
 			children = (
 				DC9E90C12C63ABAF0053D2A0 /* CalendarCollectionViewCell.swift */,
+				DC9E90C92C640BBA0053D2A0 /* WorkoutTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		DC9E90CB2C6444990053D2A0 /* StatisticModule */ = {
+			isa = PBXGroup;
+			children = (
+				DC9E90CD2C6444C40053D2A0 /* Views */,
+				DC9E90CC2C6444B50053D2A0 /* Controllers */,
+			);
+			path = StatisticModule;
+			sourceTree = "<group>";
+		};
+		DC9E90CC2C6444B50053D2A0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DC9E90CE2C6445050053D2A0 /* StatisticViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DC9E90CD2C6444C40053D2A0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DC9E90D22C644E8C0053D2A0 /* Cells */,
+				DC9E90D02C644CE20053D2A0 /* StatisticTableView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DC9E90D22C644E8C0053D2A0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DC9E90D32C644EAD0053D2A0 /* StatisticTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -236,15 +289,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC9E90AE2C61C6150053D2A0 /* WeatherView.swift in Sources */,
-				DC9E90BD2C6307CA0053D2A0 /* UIColor + Extension.swift in Sources */,
+				DC9E90BD2C6307CA0053D2A0 /* UIColor + Extensions.swift in Sources */,
 				DC9E90BF2C63A7400053D2A0 /* CalendarCollectionView.swift in Sources */,
+				DC9E90CF2C6445050053D2A0 /* StatisticViewController.swift in Sources */,
+				DC9E90C42C63E8E30053D2A0 /* UILabel + Extensions.swift in Sources */,
 				DC9E90972C6190840053D2A0 /* MainViewController.swift in Sources */,
+				DC9E90CA2C640BBA0053D2A0 /* WorkoutTableViewCell.swift in Sources */,
 				DC9E90C22C63ABAF0053D2A0 /* CalendarCollectionViewCell.swift in Sources */,
-				DC9E90B22C6302F30053D2A0 /* UIView + Extension.swift in Sources */,
+				DC9E90C62C63ED970053D2A0 /* MainTableView.swift in Sources */,
+				DC9E90B22C6302F30053D2A0 /* UIView + Extensions.swift in Sources */,
 				DC9E90932C6190840053D2A0 /* AppDelegate.swift in Sources */,
 				DC9E90AC2C619FD80053D2A0 /* CalendarView.swift in Sources */,
-				DC9E90BB2C6307240053D2A0 /* UIFont + Extension.swift in Sources */,
+				DC9E90BB2C6307240053D2A0 /* UIFont + Extensions.swift in Sources */,
 				DC9E90952C6190840053D2A0 /* SceneDelegate.swift in Sources */,
+				DC9E90D42C644EAD0053D2A0 /* StatisticTableViewCell.swift in Sources */,
+				DC9E90D12C644CE20053D2A0 /* StatisticTableView.swift in Sources */,
+				DC9E90C82C63F3250053D2A0 /* StackView + Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -63,6 +63,10 @@ final class MainViewController: UIViewController {
     private let calendar = CalendarView()
     // белое вю с солнышком
     private let weatherView = WeatherView()
+    // созданый лейбл в Extension
+    private let workoutTodayLabel = UILabel(text: "Workout today")
+    
+    private let workoutTableView = MainTableView()
     
 
     //MARK: - Life Cycle
@@ -87,6 +91,9 @@ final class MainViewController: UIViewController {
         view.addSubview(userNameLabel)
         view.addSubview(addWorkoutButton)
         view.addSubview(weatherView)
+        view.addSubview(workoutTodayLabel)
+        view.addSubview(workoutTableView)
+        
     }
     
     @objc private func addWorkoutButtonPressed() {
@@ -123,6 +130,13 @@ extension MainViewController {
             weatherView.leadingAnchor.constraint(equalTo: addWorkoutButton.trailingAnchor, constant: 10),
             weatherView.heightAnchor.constraint(equalToConstant: 80),
             
+            workoutTodayLabel.topAnchor.constraint(equalTo: addWorkoutButton.bottomAnchor, constant: 10),
+            workoutTodayLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            
+            workoutTableView.topAnchor.constraint(equalTo: workoutTodayLabel.bottomAnchor),
+            workoutTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            workoutTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            workoutTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
         ])
         
         
