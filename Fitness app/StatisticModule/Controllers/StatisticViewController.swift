@@ -26,6 +26,19 @@ class StatisticViewController: UIViewController {
         return element
     }()
     
+    private lazy var segmentedControl: UISegmentedControl = {
+        let element = UISegmentedControl(items: ["Week", "Month"])
+        element.selectedSegmentIndex = 0
+        element.backgroundColor = .specialGreen
+        element.selectedSegmentTintColor = .specialYellow
+        let font = UIFont(name: "Roboto-Medium", size: 16)
+        element.setTitleTextAttributes([.font : font as Any, .foregroundColor: UIColor.white], for: .normal)
+        element.setTitleTextAttributes([.font : font as Any, .foregroundColor: UIColor.specialGray], for: .selected)
+        
+        element.translatesAutoresizingMaskIntoConstraints = false
+        return element
+    }()
+    
     private let exercisesLabel = UILabel(text: "exercises")
     
     private let statisticTableView = StatisticTableView()
@@ -46,6 +59,7 @@ class StatisticViewController: UIViewController {
         view.addSubview(statisticLabel)
         view.addSubview(exercisesLabel)
         view.addSubview(statisticTableView)
+        view.addSubview(segmentedControl)
     }
 }
 
@@ -54,7 +68,12 @@ extension StatisticViewController {
         NSLayoutConstraint.activate([
         
             statisticLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            statisticLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            statisticLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            
+            segmentedControl.topAnchor.constraint(equalTo: statisticLabel.bottomAnchor, constant: 20),
+            segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+
             
             exercisesLabel.topAnchor.constraint(equalTo: statisticLabel.bottomAnchor, constant: 100),
             exercisesLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
