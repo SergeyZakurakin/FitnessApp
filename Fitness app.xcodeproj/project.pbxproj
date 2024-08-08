@@ -28,6 +28,8 @@
 		DC9E90CF2C6445050053D2A0 /* StatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90CE2C6445050053D2A0 /* StatisticViewController.swift */; };
 		DC9E90D12C644CE20053D2A0 /* StatisticTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90D02C644CE20053D2A0 /* StatisticTableView.swift */; };
 		DC9E90D42C644EAD0053D2A0 /* StatisticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90D32C644EAD0053D2A0 /* StatisticTableViewCell.swift */; };
+		DC9E90D72C65105D0053D2A0 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90D62C65105D0053D2A0 /* MainTabBarController.swift */; };
+		DC9E90DC2C6516DB0053D2A0 /* NewWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90DB2C6516DB0053D2A0 /* NewWorkoutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		DC9E90CE2C6445050053D2A0 /* StatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
 		DC9E90D02C644CE20053D2A0 /* StatisticTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticTableView.swift; sourceTree = "<group>"; };
 		DC9E90D32C644EAD0053D2A0 /* StatisticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticTableViewCell.swift; sourceTree = "<group>"; };
+		DC9E90D62C65105D0053D2A0 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		DC9E90DB2C6516DB0053D2A0 /* NewWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorkoutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +91,10 @@
 			isa = PBXGroup;
 			children = (
 				DC9E90AA2C6192FE0053D2A0 /* Aplication */,
+				DC9E90D52C6510340053D2A0 /* NavigationModele */,
 				DC9E90A62C6192400053D2A0 /* MainModule */,
 				DC9E90CB2C6444990053D2A0 /* StatisticModule */,
+				DC9E90D82C6516740053D2A0 /* NewWorkoutModule */,
 				DC9E90AF2C6302A60053D2A0 /* Extensions */,
 				DC9E90A92C6192840053D2A0 /* SuportingFiles */,
 			);
@@ -216,6 +222,38 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		DC9E90D52C6510340053D2A0 /* NavigationModele */ = {
+			isa = PBXGroup;
+			children = (
+				DC9E90D62C65105D0053D2A0 /* MainTabBarController.swift */,
+			);
+			path = NavigationModele;
+			sourceTree = "<group>";
+		};
+		DC9E90D82C6516740053D2A0 /* NewWorkoutModule */ = {
+			isa = PBXGroup;
+			children = (
+				DC9E90DA2C65169D0053D2A0 /* Views */,
+				DC9E90D92C6516950053D2A0 /* Controllers */,
+			);
+			path = NewWorkoutModule;
+			sourceTree = "<group>";
+		};
+		DC9E90D92C6516950053D2A0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DC9E90DB2C6516DB0053D2A0 /* NewWorkoutViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DC9E90DA2C65169D0053D2A0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -290,11 +328,13 @@
 			files = (
 				DC9E90AE2C61C6150053D2A0 /* WeatherView.swift in Sources */,
 				DC9E90BD2C6307CA0053D2A0 /* UIColor + Extensions.swift in Sources */,
+				DC9E90D72C65105D0053D2A0 /* MainTabBarController.swift in Sources */,
 				DC9E90BF2C63A7400053D2A0 /* CalendarCollectionView.swift in Sources */,
 				DC9E90CF2C6445050053D2A0 /* StatisticViewController.swift in Sources */,
 				DC9E90C42C63E8E30053D2A0 /* UILabel + Extensions.swift in Sources */,
 				DC9E90972C6190840053D2A0 /* MainViewController.swift in Sources */,
 				DC9E90CA2C640BBA0053D2A0 /* WorkoutTableViewCell.swift in Sources */,
+				DC9E90DC2C6516DB0053D2A0 /* NewWorkoutViewController.swift in Sources */,
 				DC9E90C22C63ABAF0053D2A0 /* CalendarCollectionViewCell.swift in Sources */,
 				DC9E90C62C63ED970053D2A0 /* MainTableView.swift in Sources */,
 				DC9E90B22C6302F30053D2A0 /* UIView + Extensions.swift in Sources */,

@@ -34,6 +34,7 @@ class StatisticViewController: UIViewController {
         let font = UIFont(name: "Roboto-Medium", size: 16)
         element.setTitleTextAttributes([.font : font as Any, .foregroundColor: UIColor.white], for: .normal)
         element.setTitleTextAttributes([.font : font as Any, .foregroundColor: UIColor.specialGray], for: .selected)
+        element.addTarget(self, action: #selector(segmentedChange), for: .valueChanged)
         
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
@@ -50,8 +51,16 @@ class StatisticViewController: UIViewController {
         
         setupViews()
         setupConstraints()
-        
     }
+    
+    @objc private func segmentedChange() {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            print("Week")
+        } else {
+            print("Month")
+        }
+    }
+    
     
     private func setupViews() {
         view.backgroundColor = .specialBackground
@@ -75,7 +84,7 @@ extension StatisticViewController {
             segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
 
             
-            exercisesLabel.topAnchor.constraint(equalTo: statisticLabel.bottomAnchor, constant: 100),
+            exercisesLabel.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 10),
             exercisesLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             
             statisticTableView.topAnchor.constraint(equalTo: exercisesLabel.bottomAnchor),
