@@ -10,61 +10,24 @@ import UIKit
 class RepsOrTimerView: UIView {
     //MARK: - UI
     
-    private let repsOrTimerLabel = UILabel(text: "repsOrTimerLabel")
-    
-    private let setsLabel = UILabel(text: "Sets", font: .robotoBold16(), textColor: .specialGray)
-    private let numbersSetsLabel = UILabel(text: "4", font: .robotoBold20(), textColor: .specialGray)
-    
-    private lazy var setsSlider: UISlider = {
-        let element = UISlider()
-        element.minimumValue = 0
-        element.maximumValue = 10
-        element.value = 4
-        element.maximumTrackTintColor = .specialLightBrown
-        element.minimumTrackTintColor = .specialGreen
-        element.addTarget(self, action: #selector(setsSliderChanged), for: .valueChanged)
-        
-        element.translatesAutoresizingMaskIntoConstraints = false
-        return element
-    }()
+    private let repsOrTimerLabel = UILabel(text: "Reps or timer")
     
     private var setsStackView = UIStackView()
+    private let setsLabel = UILabel(text: "Sets", font: .robotoBold16(), textColor: .specialGray)
+    private let numbersSetsLabel = UILabel(text: "4", font: .robotoBold20(), textColor: .specialGray)
+    private lazy var setsSlider = UISlider(maxValue: 10)
+    
     private let chooseRepeatsLabel = UILabel(text: "Choose repeats or timer")
     
+    private var repsStackView = UIStackView()
     private let repsLabel = UILabel(text: "Reps", font: .robotoBold16(), textColor: .specialGray)
     private let numbersRepsLabel = UILabel(text: "10", font: .robotoBold20(), textColor: .specialGray)
-        
-    private lazy var repsSlider: UISlider = {
-        let element = UISlider()
-        element.minimumValue = 0
-        element.maximumValue = 10
-        element.maximumTrackTintColor = .specialLightBrown
-        element.minimumTrackTintColor = .specialGreen
-        element.addTarget(self, action: #selector(repsSliderChanged), for: .valueChanged)
-        
-        element.translatesAutoresizingMaskIntoConstraints = false
-        return element
-    }()
-    
-    private var repsStackView = UIStackView()
-    
-    private let timerLabel = UILabel(text: "Timer", font: .robotoBold16(), textColor: .specialLightBrown)
-    private let numberTimerLabel = UILabel(text: "1min 30sec", font: .robotoBold20(), textColor: .specialLightBrown)
-    
-    
-    private lazy var timerSlider: UISlider = {
-        let element = UISlider()
-        element.minimumValue = 0
-        element.maximumValue = 10
-        element.maximumTrackTintColor = .specialLightBrown
-        element.minimumTrackTintColor = .specialGreen
-        element.addTarget(self, action: #selector(timerSliderChanged), for: .valueChanged)
-        
-        element.translatesAutoresizingMaskIntoConstraints = false
-        return element
-    }()
+    private lazy var repsSlider = UISlider(maxValue: 10)
     
     private var timerStackView = UIStackView()
+    private let timerLabel = UILabel(text: "Timer", font: .robotoBold16(), textColor: .specialLightBrown)
+    private let numberTimerLabel = UILabel(text: "1min 30sec", font: .robotoBold20(), textColor: .specialLightBrown)
+    private lazy var timerSlider = UISlider(maxValue: 10)
     
     
     //MARK: - Life Cycle
@@ -86,14 +49,12 @@ class RepsOrTimerView: UIView {
     }()
     
     
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     //MARK: - Setup Views
     private func setupViews() {
-        
         addSubview(repsOrTimerLabel)
         addSubview(backgroundView)
         
@@ -104,7 +65,6 @@ class RepsOrTimerView: UIView {
         )
         backgroundView.addSubview(setsStackView)
         backgroundView.addSubview(setsSlider)
-        
         backgroundView.addSubview(chooseRepeatsLabel)
         
         repsStackView = UIStackView(
@@ -123,12 +83,13 @@ class RepsOrTimerView: UIView {
         backgroundView.addSubview(timerStackView)
         backgroundView.addSubview(timerSlider)
         
-        
-        
+        setsSlider.addTarget(self, action: #selector(setsSliderChanged), for: .valueChanged)
+        repsSlider.addTarget(self, action: #selector(repsSliderChanged), for: .valueChanged)
+        timerSlider.addTarget(self, action: #selector(timerSliderChanged), for: .valueChanged)
     }
     
     
-    //MARK: - Actions
+    //MARK: - Private Actions
     
     @objc private func setsSliderChanged() {
         print(setsSlider.value)
@@ -140,11 +101,7 @@ class RepsOrTimerView: UIView {
     
     @objc private func timerSliderChanged() {
         print(timerSlider.value)
-        
-        
     }
-    
-    
 }
 
 //MARK: - Setup Constraints
@@ -187,18 +144,6 @@ extension RepsOrTimerView {
             timerSlider.topAnchor.constraint(equalTo: timerStackView.bottomAnchor, constant: 10),
             timerSlider.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 10),
             timerSlider.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -10),
-            
-            
-            
-
-            
-            
-        
-        
-        
         ])
-    }
-    
-    
-    
+    } 
 }

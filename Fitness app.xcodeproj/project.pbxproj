@@ -36,6 +36,7 @@
 		DC9E90E42C65A7020053D2A0 /* UIButton + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90E32C65A7020053D2A0 /* UIButton + Extensions.swift */; };
 		DC9E911A2C665C370053D2A0 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DC9E91192C665C370053D2A0 /* RealmSwift */; };
 		DC9E911B2C665C900053D2A0 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = DC9E91192C665C370053D2A0 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		DC9E911D2C665DFC0053D2A0 /* UISlider + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E911C2C665DFC0053D2A0 /* UISlider + Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -82,6 +83,7 @@
 		DC9E90DF2C65351D0053D2A0 /* DateAndRepeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndRepeatView.swift; sourceTree = "<group>"; };
 		DC9E90E12C6535730053D2A0 /* RepsOrTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepsOrTimerView.swift; sourceTree = "<group>"; };
 		DC9E90E32C65A7020053D2A0 /* UIButton + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extensions.swift"; sourceTree = "<group>"; };
+		DC9E911C2C665DFC0053D2A0 /* UISlider + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISlider + Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 				DC9E90C32C63E8E30053D2A0 /* UILabel + Extensions.swift */,
 				DC9E90C72C63F3250053D2A0 /* StackView + Extensions.swift */,
 				DC9E90E32C65A7020053D2A0 /* UIButton + Extensions.swift */,
+				DC9E911C2C665DFC0053D2A0 /* UISlider + Extensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 			files = (
 				DC9E90E02C65351D0053D2A0 /* DateAndRepeatView.swift in Sources */,
 				DC9E90AE2C61C6150053D2A0 /* WeatherView.swift in Sources */,
+				DC9E911D2C665DFC0053D2A0 /* UISlider + Extensions.swift in Sources */,
 				DC9E90E42C65A7020053D2A0 /* UIButton + Extensions.swift in Sources */,
 				DC9E90BD2C6307CA0053D2A0 /* UIColor + Extensions.swift in Sources */,
 				DC9E90E22C6535730053D2A0 /* RepsOrTimerView.swift in Sources */,
