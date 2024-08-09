@@ -30,6 +30,9 @@
 		DC9E90D42C644EAD0053D2A0 /* StatisticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90D32C644EAD0053D2A0 /* StatisticTableViewCell.swift */; };
 		DC9E90D72C65105D0053D2A0 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90D62C65105D0053D2A0 /* MainTabBarController.swift */; };
 		DC9E90DC2C6516DB0053D2A0 /* NewWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90DB2C6516DB0053D2A0 /* NewWorkoutViewController.swift */; };
+		DC9E90DE2C65261A0053D2A0 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90DD2C65261A0053D2A0 /* NameView.swift */; };
+		DC9E90E02C65351D0053D2A0 /* DateAndRepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90DF2C65351D0053D2A0 /* DateAndRepeatView.swift */; };
+		DC9E90E22C6535730053D2A0 /* RepsOrTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90E12C6535730053D2A0 /* RepsOrTimerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,9 @@
 		DC9E90D32C644EAD0053D2A0 /* StatisticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticTableViewCell.swift; sourceTree = "<group>"; };
 		DC9E90D62C65105D0053D2A0 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		DC9E90DB2C6516DB0053D2A0 /* NewWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorkoutViewController.swift; sourceTree = "<group>"; };
+		DC9E90DD2C65261A0053D2A0 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
+		DC9E90DF2C65351D0053D2A0 /* DateAndRepeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndRepeatView.swift; sourceTree = "<group>"; };
+		DC9E90E12C6535730053D2A0 /* RepsOrTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepsOrTimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +256,9 @@
 		DC9E90DA2C65169D0053D2A0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DC9E90DD2C65261A0053D2A0 /* NameView.swift */,
+				DC9E90DF2C65351D0053D2A0 /* DateAndRepeatView.swift */,
+				DC9E90E12C6535730053D2A0 /* RepsOrTimerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -326,8 +335,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC9E90E02C65351D0053D2A0 /* DateAndRepeatView.swift in Sources */,
 				DC9E90AE2C61C6150053D2A0 /* WeatherView.swift in Sources */,
 				DC9E90BD2C6307CA0053D2A0 /* UIColor + Extensions.swift in Sources */,
+				DC9E90E22C6535730053D2A0 /* RepsOrTimerView.swift in Sources */,
 				DC9E90D72C65105D0053D2A0 /* MainTabBarController.swift in Sources */,
 				DC9E90BF2C63A7400053D2A0 /* CalendarCollectionView.swift in Sources */,
 				DC9E90CF2C6445050053D2A0 /* StatisticViewController.swift in Sources */,
@@ -343,6 +354,7 @@
 				DC9E90BB2C6307240053D2A0 /* UIFont + Extensions.swift in Sources */,
 				DC9E90952C6190840053D2A0 /* SceneDelegate.swift in Sources */,
 				DC9E90D42C644EAD0053D2A0 /* StatisticTableViewCell.swift in Sources */,
+				DC9E90DE2C65261A0053D2A0 /* NameView.swift in Sources */,
 				DC9E90D12C644CE20053D2A0 /* StatisticTableView.swift in Sources */,
 				DC9E90C82C63F3250053D2A0 /* StackView + Extensions.swift in Sources */,
 			);

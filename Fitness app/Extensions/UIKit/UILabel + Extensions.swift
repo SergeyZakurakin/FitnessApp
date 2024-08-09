@@ -21,4 +21,12 @@ extension UILabel {
         self.translatesAutoresizingMaskIntoConstraints = false
     }
     
+//    convenience init(setsText: String = "") {
+//        self.init()
+//        self.text = setsText
+//        self.font = .robotoBold16()
+//        self.textColor = .specialGray
+//        self.translatesAutoresizingMaskIntoConstraints = false
+//    }
+    
 }
