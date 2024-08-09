@@ -34,7 +34,23 @@
 		DC9E90E02C65351D0053D2A0 /* DateAndRepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90DF2C65351D0053D2A0 /* DateAndRepeatView.swift */; };
 		DC9E90E22C6535730053D2A0 /* RepsOrTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90E12C6535730053D2A0 /* RepsOrTimerView.swift */; };
 		DC9E90E42C65A7020053D2A0 /* UIButton + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90E32C65A7020053D2A0 /* UIButton + Extensions.swift */; };
+		DC9E911A2C665C370053D2A0 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DC9E91192C665C370053D2A0 /* RealmSwift */; };
+		DC9E911B2C665C900053D2A0 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = DC9E91192C665C370053D2A0 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DC9E91082C66560E0053D2A0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DC9E911B2C665C900053D2A0 /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DC9E908F2C6190840053D2A0 /* Fitness app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitness app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC9E911A2C665C370053D2A0 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +293,7 @@
 				DC9E908B2C6190840053D2A0 /* Sources */,
 				DC9E908C2C6190840053D2A0 /* Frameworks */,
 				DC9E908D2C6190840053D2A0 /* Resources */,
+				DC9E91082C66560E0053D2A0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -283,6 +301,7 @@
 			);
 			name = "Fitness app";
 			packageProductDependencies = (
+				DC9E91192C665C370053D2A0 /* RealmSwift */,
 			);
 			productName = "Fitness app";
 			productReference = DC9E908F2C6190840053D2A0 /* Fitness app.app */;
@@ -313,6 +332,7 @@
 			);
 			mainGroup = DC9E90862C6190840053D2A0;
 			packageReferences = (
+				DC9E91182C665C370053D2A0 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = DC9E90902C6190840053D2A0 /* Products */;
 			projectDirPath = "";
@@ -434,7 +454,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -491,7 +511,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -587,6 +607,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DC9E91182C665C370053D2A0 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DC9E91192C665C370053D2A0 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC9E91182C665C370053D2A0 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DC9E90872C6190840053D2A0 /* Project object */;
 }
