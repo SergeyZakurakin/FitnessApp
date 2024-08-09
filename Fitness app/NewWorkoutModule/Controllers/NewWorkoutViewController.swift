@@ -9,8 +9,6 @@ import UIKit
 
 final class NewWorkoutViewController: UIViewController {
     
-    
-    
     //MARK: - UI
     private let newWorkoutLabel: UILabel = {
         let element = UILabel()
@@ -35,28 +33,18 @@ final class NewWorkoutViewController: UIViewController {
     private let dateAndRepeatView = DateAndRepeatView()
     private let repsOrTimerView = RepsOrTimerView()
     
-    private lazy var saveButton: UIButton = {
-        let element = UIButton(type: .system)
-        element.addTarget(self, action: #selector(saveButtonPressed), for: .touchUpInside)
-        element.setTitle("SAVE", for: .normal)
-        element.tintColor = .white
-        element.backgroundColor = .specialGreen
-        element.layer.cornerRadius = 10
-        
-        element.translatesAutoresizingMaskIntoConstraints = false
-        return element
-    }()
-    
+    private lazy var saveButton = UIButton(text: "SAVE")
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         setupView()
         setConstraints()
         
+        saveButton.addTarget(self, action: #selector(saveButtonPressed), for: .touchUpInside)
     }
+    
     
     @objc private func closeButtonPressed() {
         dismiss(animated: true)
@@ -65,10 +53,7 @@ final class NewWorkoutViewController: UIViewController {
     @objc private func saveButtonPressed() {
         print("Save")
     }
-    // exemple
-//    @objc private func testSliderChanged() {
-//        print(testSlider.value)
-//    }
+
     
     //MARK: - Setup Views
     private func setupView() {
@@ -80,11 +65,6 @@ final class NewWorkoutViewController: UIViewController {
         view.addSubview(dateAndRepeatView)
         view.addSubview(repsOrTimerView)
         view.addSubview(saveButton)
-        
-        // exemples
-//        view.addSubview(datePicker)
-//        view.addSubview(testSwitch)
-//        view.addSubview(testSlider)
     }
 }
 
@@ -94,7 +74,6 @@ extension NewWorkoutViewController {
         NSLayoutConstraint.activate([
             newWorkoutLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             newWorkoutLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            
             
             closeButton.centerYAnchor.constraint(equalTo: newWorkoutLabel.centerYAnchor),
             closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
@@ -117,32 +96,7 @@ extension NewWorkoutViewController {
             saveButton.topAnchor.constraint(equalTo: repsOrTimerView.bottomAnchor, constant: 15),
             saveButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
             saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
-            saveButton.heightAnchor.constraint(equalToConstant: 40)
-            
-            
-            
-            
-            
-            
-            
-            
-            // exemple
-//            datePicker.topAnchor.constraint(equalTo: nameView.bottomAnchor, constant: 10),
-//            datePicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-//            
-//            testSwitch.topAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 10),
-//            testSwitch.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-//            
-//            testSlider.topAnchor.constraint(equalTo: testSwitch.bottomAnchor, constant: 10),
-//            testSlider.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-//            testSlider.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-
-        
-        
-        
+            saveButton.heightAnchor.constraint(equalToConstant: 50),
         ])
-        
-        
-        
     }
 }

@@ -12,24 +12,8 @@ class RepsOrTimerView: UIView {
     
     private let repsOrTimerLabel = UILabel(text: "repsOrTimerLabel")
     
-    
-    private let setsLabel: UILabel = {
-        let element = UILabel()
-        element.text = "Sets"
-        element.font = .robotoBold16()
-        element.textColor = .specialGray
-        element.translatesAutoresizingMaskIntoConstraints = false
-        return element
-    }()
-    
-    private let numbersSetsLabel: UILabel = {
-        let element = UILabel()
-        element.text = "4"
-        element.font = .robotoBold20()
-        element.textColor = .specialGray
-        element.translatesAutoresizingMaskIntoConstraints = false
-        return element
-    }()
+    private let setsLabel = UILabel(text: "Sets", font: .robotoBold16(), textColor: .specialGray)
+    private let numbersSetsLabel = UILabel(text: "4", font: .robotoBold20(), textColor: .specialGray)
     
     private lazy var setsSlider: UISlider = {
         let element = UISlider()
@@ -45,27 +29,11 @@ class RepsOrTimerView: UIView {
     }()
     
     private var setsStackView = UIStackView()
-    
     private let chooseRepeatsLabel = UILabel(text: "Choose repeats or timer")
     
-    private let repsLabel: UILabel = {
-        let element = UILabel()
-        element.text = "Reps"
-        element.font = .robotoBold16()
-        element.textColor = .specialGray
-        element.translatesAutoresizingMaskIntoConstraints = false
-        return element
-    }()
-    
-    private let numbersRepsLabel: UILabel = {
-        let element = UILabel()
-        element.text = "10"
-        element.font = .robotoBold20()
-        element.textColor = .specialGray
-        element.translatesAutoresizingMaskIntoConstraints = false
-        return element
-    }()
-    
+    private let repsLabel = UILabel(text: "Reps", font: .robotoBold16(), textColor: .specialGray)
+    private let numbersRepsLabel = UILabel(text: "10", font: .robotoBold20(), textColor: .specialGray)
+        
     private lazy var repsSlider: UISlider = {
         let element = UISlider()
         element.minimumValue = 0
@@ -80,23 +48,9 @@ class RepsOrTimerView: UIView {
     
     private var repsStackView = UIStackView()
     
-    private let timerLabel: UILabel = {
-        let element = UILabel()
-        element.text = "Timer"
-        element.font = .robotoBold16()
-        element.textColor = .specialLightBrown
-        element.translatesAutoresizingMaskIntoConstraints = false
-        return element
-    }()
+    private let timerLabel = UILabel(text: "Timer", font: .robotoBold16(), textColor: .specialLightBrown)
+    private let numberTimerLabel = UILabel(text: "1min 30sec", font: .robotoBold20(), textColor: .specialLightBrown)
     
-    private let numberTimerLabel: UILabel = {
-        let element = UILabel()
-        element.text = "1min 30sec"
-        element.font = .robotoBold20()
-        element.textColor = .specialLightBrown
-        element.translatesAutoresizingMaskIntoConstraints = false
-        return element
-    }()
     
     private lazy var timerSlider: UISlider = {
         let element = UISlider()
@@ -112,7 +66,6 @@ class RepsOrTimerView: UIView {
     
     private var timerStackView = UIStackView()
     
-
     
     //MARK: - Life Cycle
     override init(frame: CGRect) {

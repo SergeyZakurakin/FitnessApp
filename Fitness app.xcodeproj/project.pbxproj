@@ -33,6 +33,7 @@
 		DC9E90DE2C65261A0053D2A0 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90DD2C65261A0053D2A0 /* NameView.swift */; };
 		DC9E90E02C65351D0053D2A0 /* DateAndRepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90DF2C65351D0053D2A0 /* DateAndRepeatView.swift */; };
 		DC9E90E22C6535730053D2A0 /* RepsOrTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90E12C6535730053D2A0 /* RepsOrTimerView.swift */; };
+		DC9E90E42C65A7020053D2A0 /* UIButton + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90E32C65A7020053D2A0 /* UIButton + Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		DC9E90DD2C65261A0053D2A0 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
 		DC9E90DF2C65351D0053D2A0 /* DateAndRepeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndRepeatView.swift; sourceTree = "<group>"; };
 		DC9E90E12C6535730053D2A0 /* RepsOrTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepsOrTimerView.swift; sourceTree = "<group>"; };
+		DC9E90E32C65A7020053D2A0 /* UIButton + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 				DC9E90B12C6302F30053D2A0 /* UIView + Extensions.swift */,
 				DC9E90C32C63E8E30053D2A0 /* UILabel + Extensions.swift */,
 				DC9E90C72C63F3250053D2A0 /* StackView + Extensions.swift */,
+				DC9E90E32C65A7020053D2A0 /* UIButton + Extensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -279,6 +282,8 @@
 			dependencies = (
 			);
 			name = "Fitness app";
+			packageProductDependencies = (
+			);
 			productName = "Fitness app";
 			productReference = DC9E908F2C6190840053D2A0 /* Fitness app.app */;
 			productType = "com.apple.product-type.application";
@@ -307,6 +312,8 @@
 				Base,
 			);
 			mainGroup = DC9E90862C6190840053D2A0;
+			packageReferences = (
+			);
 			productRefGroup = DC9E90902C6190840053D2A0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -337,6 +344,7 @@
 			files = (
 				DC9E90E02C65351D0053D2A0 /* DateAndRepeatView.swift in Sources */,
 				DC9E90AE2C61C6150053D2A0 /* WeatherView.swift in Sources */,
+				DC9E90E42C65A7020053D2A0 /* UIButton + Extensions.swift in Sources */,
 				DC9E90BD2C6307CA0053D2A0 /* UIColor + Extensions.swift in Sources */,
 				DC9E90E22C6535730053D2A0 /* RepsOrTimerView.swift in Sources */,
 				DC9E90D72C65105D0053D2A0 /* MainTabBarController.swift in Sources */,
@@ -507,7 +515,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -539,7 +547,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
