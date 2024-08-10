@@ -37,6 +37,10 @@
 		DC9E911A2C665C370053D2A0 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DC9E91192C665C370053D2A0 /* RealmSwift */; };
 		DC9E911B2C665C900053D2A0 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = DC9E91192C665C370053D2A0 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		DC9E911D2C665DFC0053D2A0 /* UISlider + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E911C2C665DFC0053D2A0 /* UISlider + Extensions.swift */; };
+		DC9E911F2C66F2120053D2A0 /* Int + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E911E2C66F2120053D2A0 /* Int + Extensions.swift */; };
+		DC9E91222C66F8B80053D2A0 /* SliderTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E91212C66F8B80053D2A0 /* SliderTypes.swift */; };
+		DC9E91252C6703A00053D2A0 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E91242C6703A00053D2A0 /* SliderView.swift */; };
+		DC9E912B2C6705930053D2A0 /* GreenSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E912A2C6705930053D2A0 /* GreenSlider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -84,6 +88,10 @@
 		DC9E90E12C6535730053D2A0 /* RepsOrTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepsOrTimerView.swift; sourceTree = "<group>"; };
 		DC9E90E32C65A7020053D2A0 /* UIButton + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extensions.swift"; sourceTree = "<group>"; };
 		DC9E911C2C665DFC0053D2A0 /* UISlider + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISlider + Extensions.swift"; sourceTree = "<group>"; };
+		DC9E911E2C66F2120053D2A0 /* Int + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + Extensions.swift"; sourceTree = "<group>"; };
+		DC9E91212C66F8B80053D2A0 /* SliderTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderTypes.swift; sourceTree = "<group>"; };
+		DC9E91242C6703A00053D2A0 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
+		DC9E912A2C6705930053D2A0 /* GreenSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenSlider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,7 +188,9 @@
 		DC9E90AF2C6302A60053D2A0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				DC9E91292C6705740053D2A0 /* Items */,
 				DC9E90B02C6302D10053D2A0 /* UIKit */,
+				DC9E911E2C66F2120053D2A0 /* Int + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -262,6 +272,7 @@
 		DC9E90D82C6516740053D2A0 /* NewWorkoutModule */ = {
 			isa = PBXGroup;
 			children = (
+				DC9E91202C66F7320053D2A0 /* Model */,
 				DC9E90DA2C65169D0053D2A0 /* Views */,
 				DC9E90D92C6516950053D2A0 /* Controllers */,
 			);
@@ -279,11 +290,36 @@
 		DC9E90DA2C65169D0053D2A0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DC9E91232C6703890053D2A0 /* SubView */,
 				DC9E90DD2C65261A0053D2A0 /* NameView.swift */,
 				DC9E90DF2C65351D0053D2A0 /* DateAndRepeatView.swift */,
 				DC9E90E12C6535730053D2A0 /* RepsOrTimerView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DC9E91202C66F7320053D2A0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DC9E91212C66F8B80053D2A0 /* SliderTypes.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DC9E91232C6703890053D2A0 /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				DC9E91242C6703A00053D2A0 /* SliderView.swift */,
+			);
+			path = SubView;
+			sourceTree = "<group>";
+		};
+		DC9E91292C6705740053D2A0 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				DC9E912A2C6705930053D2A0 /* GreenSlider.swift */,
+			);
+			path = Items;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,14 +405,17 @@
 				DC9E90AE2C61C6150053D2A0 /* WeatherView.swift in Sources */,
 				DC9E911D2C665DFC0053D2A0 /* UISlider + Extensions.swift in Sources */,
 				DC9E90E42C65A7020053D2A0 /* UIButton + Extensions.swift in Sources */,
+				DC9E912B2C6705930053D2A0 /* GreenSlider.swift in Sources */,
 				DC9E90BD2C6307CA0053D2A0 /* UIColor + Extensions.swift in Sources */,
 				DC9E90E22C6535730053D2A0 /* RepsOrTimerView.swift in Sources */,
+				DC9E91222C66F8B80053D2A0 /* SliderTypes.swift in Sources */,
 				DC9E90D72C65105D0053D2A0 /* MainTabBarController.swift in Sources */,
 				DC9E90BF2C63A7400053D2A0 /* CalendarCollectionView.swift in Sources */,
 				DC9E90CF2C6445050053D2A0 /* StatisticViewController.swift in Sources */,
 				DC9E90C42C63E8E30053D2A0 /* UILabel + Extensions.swift in Sources */,
 				DC9E90972C6190840053D2A0 /* MainViewController.swift in Sources */,
 				DC9E90CA2C640BBA0053D2A0 /* WorkoutTableViewCell.swift in Sources */,
+				DC9E911F2C66F2120053D2A0 /* Int + Extensions.swift in Sources */,
 				DC9E90DC2C6516DB0053D2A0 /* NewWorkoutViewController.swift in Sources */,
 				DC9E90C22C63ABAF0053D2A0 /* CalendarCollectionViewCell.swift in Sources */,
 				DC9E90C62C63ED970053D2A0 /* MainTableView.swift in Sources */,
@@ -384,6 +423,7 @@
 				DC9E90932C6190840053D2A0 /* AppDelegate.swift in Sources */,
 				DC9E90AC2C619FD80053D2A0 /* CalendarView.swift in Sources */,
 				DC9E90BB2C6307240053D2A0 /* UIFont + Extensions.swift in Sources */,
+				DC9E91252C6703A00053D2A0 /* SliderView.swift in Sources */,
 				DC9E90952C6190840053D2A0 /* SceneDelegate.swift in Sources */,
 				DC9E90D42C644EAD0053D2A0 /* StatisticTableViewCell.swift in Sources */,
 				DC9E90DE2C65261A0053D2A0 /* NameView.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainTableView: UITableView {
+final class MainTableView: UITableView {
     
     //MARK: - Life Cycle
     override init(frame: CGRect, style: UITableView.Style) {
@@ -15,12 +15,8 @@ class MainTableView: UITableView {
         configure()
         setDelegates()
         register(WorkoutTableViewCell.self, forCellReuseIdentifier: WorkoutTableViewCell.idTableViewCell)
-        
     }
-    
-    
-    
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

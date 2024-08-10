@@ -25,10 +25,23 @@ class RepsOrTimerView: UIView {
     private lazy var repsSlider = UISlider(maxValue: 10)
     
     private var timerStackView = UIStackView()
-    private let timerLabel = UILabel(text: "Timer", font: .robotoBold16(), textColor: .specialLightBrown)
-    private let numberTimerLabel = UILabel(text: "1min 30sec", font: .robotoBold20(), textColor: .specialLightBrown)
-    private lazy var timerSlider = UISlider(maxValue: 10)
+    private let timerLabel = UILabel(text: "Timer", font: .robotoBold16(), textColor: .specialGray)
+    private let numberTimerLabel = UILabel(text: "1min 30sec", font: .robotoBold20(), textColor: .specialGray)
+    private lazy var timerSlider = UISlider(maxValue: 600)
     
+//    var isActive: Bool {
+//        didSet {
+//            if isActive == true {
+//                repsLabel.alpha = 1
+//                numbersRepsLabel.alpha = 1
+//                repsSlider.alpha = 1
+//            } else {
+//                timerLabel.alpha = 0.5
+//                numberTimerLabel.alpha = 0.5
+//                timerSlider.alpha = 0.5
+//            }
+//        }
+//    }
     
     //MARK: - Life Cycle
     override init(frame: CGRect) {
@@ -83,24 +96,16 @@ class RepsOrTimerView: UIView {
         backgroundView.addSubview(timerStackView)
         backgroundView.addSubview(timerSlider)
         
-        setsSlider.addTarget(self, action: #selector(setsSliderChanged), for: .valueChanged)
-        repsSlider.addTarget(self, action: #selector(repsSliderChanged), for: .valueChanged)
-        timerSlider.addTarget(self, action: #selector(timerSliderChanged), for: .valueChanged)
+        setsSlider.addTarget(self, action: #selector(sliderChanged), for: .valueChanged)
+        repsSlider.addTarget(self, action: #selector(sliderChanged), for: .valueChanged)
+        timerSlider.addTarget(self, action: #selector(sliderChanged), for: .valueChanged)
     }
-    
     
     //MARK: - Private Actions
-    
-    @objc private func setsSliderChanged() {
-        print(setsSlider.value)
-    }
-    
-    @objc private func repsSliderChanged() {
-        print(repsSlider.value)
-    }
-    
-    @objc private func timerSliderChanged() {
-        print(timerSlider.value)
+    @objc private func sliderChanged() {
+        numbersSetsLabel.text = "\(Int(setsSlider.value))"
+        numbersRepsLabel.text = "\(Int(repsSlider.value))"
+        numberTimerLabel.text = "\(Int(timerSlider.value).getTimeFromSeconds())"
     }
 }
 
@@ -145,5 +150,5 @@ extension RepsOrTimerView {
             timerSlider.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 10),
             timerSlider.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -10),
         ])
-    } 
+    }
 }

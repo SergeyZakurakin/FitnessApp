@@ -8,11 +8,7 @@
 import UIKit
 
 class MainTabBarController: UITabBarController {
-    
-    
-    
-    
-    
+
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,12 +16,7 @@ class MainTabBarController: UITabBarController {
         setupTabBar()
         setupItems()
     }
-    
-    
-    
-    
-    
-    
+ 
     private func setupTabBar() {
         tabBar.backgroundColor = .specialTabBar
         // selected item
@@ -52,8 +43,7 @@ class MainTabBarController: UITabBarController {
         
         items[0].image = UIImage(named: "mainTabBar")
         items[1].image = UIImage(named: "statisticTabBar")
-        
-        
+            
         // setup font
         let font = UIFont(name: "Roboto-Bold", size: 12)
         UITabBarItem.appearance().setTitleTextAttributes([.font : font as Any, ], for: .normal)
