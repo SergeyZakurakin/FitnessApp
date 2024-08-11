@@ -52,6 +52,11 @@ final class NameView: UIView {
         addSubview(nameTextField)
         
     }
+    
+    public func getNameFromTextField() -> String {
+        guard let text = nameTextField.text else { return ""}
+        return text
+    }
 
 }
 

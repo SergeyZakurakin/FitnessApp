@@ -41,6 +41,11 @@
 		DC9E91222C66F8B80053D2A0 /* SliderTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E91212C66F8B80053D2A0 /* SliderTypes.swift */; };
 		DC9E91252C6703A00053D2A0 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E91242C6703A00053D2A0 /* SliderView.swift */; };
 		DC9E912B2C6705930053D2A0 /* GreenSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E912A2C6705930053D2A0 /* GreenSlider.swift */; };
+		DC9E912E2C67D1EB0053D2A0 /* WorkOutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E912D2C67D1EB0053D2A0 /* WorkOutModel.swift */; };
+		DC9E91302C67E2020053D2A0 /* Date + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E912F2C67E2020053D2A0 /* Date + Extensions.swift */; };
+		DC9E91332C6832110053D2A0 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E91322C6832110053D2A0 /* RealmManager.swift */; };
+		DC9E91382C6861710053D2A0 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E91372C6861710053D2A0 /* StartViewController.swift */; };
+		DC9E913A2C6862760053D2A0 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E91392C6862760053D2A0 /* CloseButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -92,6 +97,11 @@
 		DC9E91212C66F8B80053D2A0 /* SliderTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderTypes.swift; sourceTree = "<group>"; };
 		DC9E91242C6703A00053D2A0 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
 		DC9E912A2C6705930053D2A0 /* GreenSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenSlider.swift; sourceTree = "<group>"; };
+		DC9E912D2C67D1EB0053D2A0 /* WorkOutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkOutModel.swift; sourceTree = "<group>"; };
+		DC9E912F2C67E2020053D2A0 /* Date + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extensions.swift"; sourceTree = "<group>"; };
+		DC9E91322C6832110053D2A0 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		DC9E91372C6861710053D2A0 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		DC9E91392C6862760053D2A0 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +140,8 @@
 				DC9E90A62C6192400053D2A0 /* MainModule */,
 				DC9E90CB2C6444990053D2A0 /* StatisticModule */,
 				DC9E90D82C6516740053D2A0 /* NewWorkoutModule */,
+				DC9E91342C6861110053D2A0 /* StartWorkoutModule */,
+				DC9E91312C6831E80053D2A0 /* Services */,
 				DC9E90AF2C6302A60053D2A0 /* Extensions */,
 				DC9E90A92C6192840053D2A0 /* SuportingFiles */,
 			);
@@ -139,6 +151,7 @@
 		DC9E90A62C6192400053D2A0 /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
+				DC9E912C2C67D1B20053D2A0 /* Models */,
 				DC9E90A82C61926A0053D2A0 /* Views */,
 				DC9E90A72C61924E0053D2A0 /* Controllers */,
 			);
@@ -188,9 +201,10 @@
 		DC9E90AF2C6302A60053D2A0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				DC9E91292C6705740053D2A0 /* Items */,
+				DC9E91292C6705740053D2A0 /* Elements */,
 				DC9E90B02C6302D10053D2A0 /* UIKit */,
 				DC9E911E2C66F2120053D2A0 /* Int + Extensions.swift */,
+				DC9E912F2C67E2020053D2A0 /* Date + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -314,12 +328,53 @@
 			path = SubView;
 			sourceTree = "<group>";
 		};
-		DC9E91292C6705740053D2A0 /* Items */ = {
+		DC9E91292C6705740053D2A0 /* Elements */ = {
 			isa = PBXGroup;
 			children = (
 				DC9E912A2C6705930053D2A0 /* GreenSlider.swift */,
+				DC9E91392C6862760053D2A0 /* CloseButton.swift */,
 			);
-			path = Items;
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		DC9E912C2C67D1B20053D2A0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DC9E912D2C67D1EB0053D2A0 /* WorkOutModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DC9E91312C6831E80053D2A0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DC9E91322C6832110053D2A0 /* RealmManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DC9E91342C6861110053D2A0 /* StartWorkoutModule */ = {
+			isa = PBXGroup;
+			children = (
+				DC9E91362C6861460053D2A0 /* Views */,
+				DC9E91352C6861390053D2A0 /* Controllers */,
+			);
+			path = StartWorkoutModule;
+			sourceTree = "<group>";
+		};
+		DC9E91352C6861390053D2A0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DC9E91372C6861710053D2A0 /* StartViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DC9E91362C6861460053D2A0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,10 +457,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC9E90E02C65351D0053D2A0 /* DateAndRepeatView.swift in Sources */,
+				DC9E91382C6861710053D2A0 /* StartViewController.swift in Sources */,
+				DC9E91302C67E2020053D2A0 /* Date + Extensions.swift in Sources */,
 				DC9E90AE2C61C6150053D2A0 /* WeatherView.swift in Sources */,
 				DC9E911D2C665DFC0053D2A0 /* UISlider + Extensions.swift in Sources */,
 				DC9E90E42C65A7020053D2A0 /* UIButton + Extensions.swift in Sources */,
 				DC9E912B2C6705930053D2A0 /* GreenSlider.swift in Sources */,
+				DC9E912E2C67D1EB0053D2A0 /* WorkOutModel.swift in Sources */,
 				DC9E90BD2C6307CA0053D2A0 /* UIColor + Extensions.swift in Sources */,
 				DC9E90E22C6535730053D2A0 /* RepsOrTimerView.swift in Sources */,
 				DC9E91222C66F8B80053D2A0 /* SliderTypes.swift in Sources */,
@@ -413,6 +471,7 @@
 				DC9E90BF2C63A7400053D2A0 /* CalendarCollectionView.swift in Sources */,
 				DC9E90CF2C6445050053D2A0 /* StatisticViewController.swift in Sources */,
 				DC9E90C42C63E8E30053D2A0 /* UILabel + Extensions.swift in Sources */,
+				DC9E913A2C6862760053D2A0 /* CloseButton.swift in Sources */,
 				DC9E90972C6190840053D2A0 /* MainViewController.swift in Sources */,
 				DC9E90CA2C640BBA0053D2A0 /* WorkoutTableViewCell.swift in Sources */,
 				DC9E911F2C66F2120053D2A0 /* Int + Extensions.swift in Sources */,
@@ -424,6 +483,7 @@
 				DC9E90AC2C619FD80053D2A0 /* CalendarView.swift in Sources */,
 				DC9E90BB2C6307240053D2A0 /* UIFont + Extensions.swift in Sources */,
 				DC9E91252C6703A00053D2A0 /* SliderView.swift in Sources */,
+				DC9E91332C6832110053D2A0 /* RealmManager.swift in Sources */,
 				DC9E90952C6190840053D2A0 /* SceneDelegate.swift in Sources */,
 				DC9E90D42C644EAD0053D2A0 /* StatisticTableViewCell.swift in Sources */,
 				DC9E90DE2C65261A0053D2A0 /* NameView.swift in Sources */,

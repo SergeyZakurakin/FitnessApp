@@ -94,13 +94,14 @@ class DateAndRepeatView: UIView {
         
         backgroundView.addSubview(dateStackView)
         backgroundView.addSubview(repeatsStackView)
-        
-    
     }
     
-    
-    
+    public func getDateAndRepeat() -> (date: Date, isRepeat: Bool) {
+        return (datePicker.date, repeatSwitcher.isOn)
+    }
 }
+
+
 
 //MARK: - Setup Constraints
 extension DateAndRepeatView {
@@ -123,11 +124,6 @@ extension DateAndRepeatView {
             repeatsStackView.topAnchor.constraint(equalTo: dateStackView.bottomAnchor, constant: 10),
             repeatsStackView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 10),
             repeatsStackView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -10),
-        
-        
         ])
-        
-        
-        
     }
 }

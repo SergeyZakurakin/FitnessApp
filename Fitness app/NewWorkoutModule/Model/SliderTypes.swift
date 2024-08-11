@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+enum SliderTypes {
+    case sets
+    case reps
+    case timer
+}

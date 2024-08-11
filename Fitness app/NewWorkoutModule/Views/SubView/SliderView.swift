@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol SliderViewProtocol: AnyObject {
+    func changeValue(type: SliderTypes, value: Int)
+}
+
 final class SliderView: UIView {
+    
+    weak var delegate: SliderViewProtocol?
     
     private let nameLabel = UILabel(
         text: "Name",
@@ -25,18 +31,42 @@ final class SliderView: UIView {
     
     private var mainStackView = UIStackView()
     
+    
+    //MARK: - Private properties
+    private var sliderType: SliderTypes?
+    
+    //MARK: - Public properties
+    public var isActive: Bool = true {
+        didSet {
+            if isActive == true {
+                nameLabel.alpha = 1
+                numberLabel.alpha = 1
+                slider.alpha = 1
+            } else {
+                nameLabel.alpha = 0.5
+                numberLabel.alpha = 0.5
+                slider.alpha = 0.5
+                slider.value = 0
+                numberLabel.text = "0"
+            }
+        }
+    }
+    
     //MARK: - Life Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupView()
-        setupConstraints()
+        
     }
     
-    convenience init(name: String, maxValue: Float) {
+    convenience init(name: String, maxValue: Float, type: SliderTypes) {
         self.init(frame: .zero)
         
         nameLabel.text = name
         slider.maximumValue = maxValue
+        sliderType = type
+        
+        setupView()
+        setupConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -60,6 +90,15 @@ final class SliderView: UIView {
             spacing: 10
         )
         addSubview(mainStackView)
+        
+        slider.addTarget(self, action: #selector(sliderChanged), for: .valueChanged)
+    }
+    
+    @objc private func sliderChanged() {
+        let intValueSlider = Int(slider.value)
+        numberLabel.text = sliderType == .timer ? intValueSlider.getTimeFromSeconds() : "\(intValueSlider)"
+        guard let type = sliderType else { return }
+        delegate?.changeValue(type: type, value: intValueSlider)
     }
 }
 

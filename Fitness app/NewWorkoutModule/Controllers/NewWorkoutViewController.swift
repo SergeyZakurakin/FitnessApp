@@ -21,20 +21,17 @@ final class NewWorkoutViewController: UIViewController {
         return element
     }()
     
-    private lazy var closeButton: UIButton = {
-        let element = UIButton(type: .system)
-        element.addTarget(self, action: #selector(closeButtonPressed), for: .touchUpInside)
-        element.setBackgroundImage(UIImage(named: "Close Button"), for: .normal)
-        
-        element.translatesAutoresizingMaskIntoConstraints = false
-        return element
-    }()
+    private lazy var closeButton = CloseButton(type: .system)
     
     private let nameView = NameView()
     private let dateAndRepeatView = DateAndRepeatView()
     private let repsOrTimerView = RepsOrTimerView()
     
     private lazy var saveButton = UIButton(text: "SAVE")
+    
+    private var workOutModel = WorkOutModel()
+    
+    private let testImage = UIImage(named: "imageCell") // change image name
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -44,17 +41,36 @@ final class NewWorkoutViewController: UIViewController {
         setConstraints()
         
         saveButton.addTarget(self, action: #selector(saveButtonPressed), for: .touchUpInside)
+        closeButton.addTarget(self, action: #selector(closeButtonPressed), for: .touchUpInside)
+        
     }
-    
     
     @objc private func closeButtonPressed() {
         dismiss(animated: true)
     }
     
     @objc private func saveButtonPressed() {
-        print("Save")
+        setModel()
+        print(workOutModel)
+        RealmManager.shared.saveWorkoutModel(workOutModel)
     }
 
+    private func setModel() {
+        workOutModel.workOutName = nameView.getNameFromTextField()
+        
+        workOutModel.workOutDate = dateAndRepeatView.getDateAndRepeat().date
+        workOutModel.workOutRepeat = dateAndRepeatView.getDateAndRepeat().isRepeat
+        workOutModel.workOutNumberOfDay = dateAndRepeatView.getDateAndRepeat().date.getWeekDayNumber()
+        
+        workOutModel.workOutSets = repsOrTimerView.sets
+        workOutModel.workOutReps = repsOrTimerView.reps
+        workOutModel.workOutTimer = repsOrTimerView.timer
+        
+        // image to Data
+        guard let imageData = testImage?.pngData() else { return }
+        workOutModel.workOutImage = imageData
+    }
+    
     
     //MARK: - Setup Views
     private func setupView() {
@@ -97,7 +113,7 @@ extension NewWorkoutViewController {
             saveButton.topAnchor.constraint(equalTo: repsOrTimerView.bottomAnchor, constant: 15),
             saveButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
             saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
-            saveButton.heightAnchor.constraint(equalToConstant: 50),
+            saveButton.heightAnchor.constraint(equalToConstant: 55),
         ])
     }
 }
