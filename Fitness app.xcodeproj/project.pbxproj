@@ -46,6 +46,7 @@
 		DC9E91332C6832110053D2A0 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E91322C6832110053D2A0 /* RealmManager.swift */; };
 		DC9E91382C6861710053D2A0 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E91372C6861710053D2A0 /* StartViewController.swift */; };
 		DC9E913A2C6862760053D2A0 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E91392C6862760053D2A0 /* CloseButton.swift */; };
+		DC9E913C2C686D2A0053D2A0 /* StartWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E913B2C686D2A0053D2A0 /* StartWorkoutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -102,6 +103,7 @@
 		DC9E91322C6832110053D2A0 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		DC9E91372C6861710053D2A0 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		DC9E91392C6862760053D2A0 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		DC9E913B2C686D2A0053D2A0 /* StartWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartWorkoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -373,6 +375,7 @@
 		DC9E91362C6861460053D2A0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DC9E913B2C686D2A0053D2A0 /* StartWorkoutView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				DC9E90932C6190840053D2A0 /* AppDelegate.swift in Sources */,
 				DC9E90AC2C619FD80053D2A0 /* CalendarView.swift in Sources */,
 				DC9E90BB2C6307240053D2A0 /* UIFont + Extensions.swift in Sources */,
+				DC9E913C2C686D2A0053D2A0 /* StartWorkoutView.swift in Sources */,
 				DC9E91252C6703A00053D2A0 /* SliderView.swift in Sources */,
 				DC9E91332C6832110053D2A0 /* RealmManager.swift in Sources */,
 				DC9E90952C6190840053D2A0 /* SceneDelegate.swift in Sources */,

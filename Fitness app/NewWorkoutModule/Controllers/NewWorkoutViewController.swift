@@ -11,15 +11,12 @@ import RealmSwift
 final class NewWorkoutViewController: UIViewController {
     
     //MARK: - UI
-    private let newWorkoutLabel: UILabel = {
-        let element = UILabel()
-        element.text = "NEW WORKOUT"
-        element.font = .robotoBold24()
-        element.textColor = .specialGray
-        
-        element.translatesAutoresizingMaskIntoConstraints = false
-        return element
-    }()
+    
+    private let newWorkoutLabel = UILabel(
+        text: "NEW WORKOUT",
+        font: .robotoBold24(),
+        textColor: .specialGray
+    )
     
     private lazy var closeButton = CloseButton(type: .system)
     
