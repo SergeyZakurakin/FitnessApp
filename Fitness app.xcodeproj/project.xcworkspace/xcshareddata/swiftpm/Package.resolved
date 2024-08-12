@@ -4,7 +4,7 @@
     {
       "identity" : "realm-core",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/realm/realm-core.git",
+      "location" : "https://github.com/realm/realm-core",
       "state" : {
         "revision" : "c2552e1d36867cb42b28130e894a81fc17081062",
         "version" : "14.12.0"
