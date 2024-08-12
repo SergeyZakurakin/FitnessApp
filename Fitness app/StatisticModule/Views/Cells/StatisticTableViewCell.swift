@@ -32,13 +32,8 @@ class StatisticTableViewCell: UITableViewCell {
         return element
     }()
     
-    private let seporatorView: UIView = {
-        let element = UIView()
-        element.backgroundColor = .specialLine
-        
-        element.translatesAutoresizingMaskIntoConstraints = false
-        return element
-    }()
+    private let seporatorView = SeparatorView()
+    
     
     private let beforeLabel = UILabel(text: "Before: 18")
     private let nowLabel = UILabel(text: "Now: 20")

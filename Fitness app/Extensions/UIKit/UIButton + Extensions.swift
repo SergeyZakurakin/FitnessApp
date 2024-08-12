@@ -15,6 +15,7 @@ extension UIButton {
         self.tintColor = .white
         self.backgroundColor = .specialGreen
         self.layer.cornerRadius = 10
+        self.titleLabel?.font = .robotoBold16()
         
         self.translatesAutoresizingMaskIntoConstraints = false
     }

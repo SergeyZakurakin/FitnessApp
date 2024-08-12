@@ -32,6 +32,8 @@ final class StartViewController: UIViewController {
     
     private let startWorkoutView = StartWorkoutView()
     
+    private lazy var finishButton = UIButton(text: "FINISH")
+    
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -50,12 +52,18 @@ final class StartViewController: UIViewController {
         view.addSubview(workoutImageView)
         view.addSubview(detailsLabel)
         view.addSubview(startWorkoutView)
+        view.addSubview(finishButton)
         
         closeButton.addTarget(self, action: #selector(closeButtonPressed), for: .touchUpInside)
+        finishButton.addTarget(self, action: #selector(finishButtonPressed), for: .touchUpInside)
     }
-    
+    //MARK: - Actions
     @objc private func closeButtonPressed() {
         dismiss(animated: true)
+    }
+    
+    @objc private func finishButtonPressed() {
+        print("finish")
     }
 }
 
@@ -80,6 +88,13 @@ extension StartViewController {
             startWorkoutView.topAnchor.constraint(equalTo: detailsLabel.bottomAnchor),
             startWorkoutView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             startWorkoutView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            
+            finishButton.topAnchor.constraint(equalTo: startWorkoutView.bottomAnchor, constant: 10),
+            finishButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            finishButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            finishButton.heightAnchor.constraint(equalToConstant: 60)
+
+            
         
         
         

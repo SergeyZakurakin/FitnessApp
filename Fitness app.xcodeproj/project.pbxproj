@@ -47,6 +47,7 @@
 		DC9E91382C6861710053D2A0 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E91372C6861710053D2A0 /* StartViewController.swift */; };
 		DC9E913A2C6862760053D2A0 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E91392C6862760053D2A0 /* CloseButton.swift */; };
 		DC9E913C2C686D2A0053D2A0 /* StartWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E913B2C686D2A0053D2A0 /* StartWorkoutView.swift */; };
+		DC9E913E2C6A94440053D2A0 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E913D2C6A94440053D2A0 /* SeparatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -104,6 +105,7 @@
 		DC9E91372C6861710053D2A0 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		DC9E91392C6862760053D2A0 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		DC9E913B2C686D2A0053D2A0 /* StartWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartWorkoutView.swift; sourceTree = "<group>"; };
+		DC9E913D2C6A94440053D2A0 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -335,6 +337,7 @@
 			children = (
 				DC9E912A2C6705930053D2A0 /* GreenSlider.swift */,
 				DC9E91392C6862760053D2A0 /* CloseButton.swift */,
+				DC9E913D2C6A94440053D2A0 /* SeparatorView.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				DC9E90C42C63E8E30053D2A0 /* UILabel + Extensions.swift in Sources */,
 				DC9E913A2C6862760053D2A0 /* CloseButton.swift in Sources */,
 				DC9E90972C6190840053D2A0 /* MainViewController.swift in Sources */,
+				DC9E913E2C6A94440053D2A0 /* SeparatorView.swift in Sources */,
 				DC9E90CA2C640BBA0053D2A0 /* WorkoutTableViewCell.swift in Sources */,
 				DC9E911F2C66F2120053D2A0 /* Int + Extensions.swift in Sources */,
 				DC9E90DC2C6516DB0053D2A0 /* NewWorkoutViewController.swift in Sources */,
