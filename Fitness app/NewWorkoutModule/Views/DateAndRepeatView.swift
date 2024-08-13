@@ -96,8 +96,15 @@ class DateAndRepeatView: UIView {
         backgroundView.addSubview(repeatsStackView)
     }
     
+    //MARK: - Public Methods
     public func getDateAndRepeat() -> (date: Date, isRepeat: Bool) {
         return (datePicker.date, repeatSwitcher.isOn)
+    }
+    
+    public func resetDataAndRepeat() {
+        // correct date
+        datePicker.date = Date()
+        repeatSwitcher.isOn = true
     }
 }
 

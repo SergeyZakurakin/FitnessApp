@@ -59,7 +59,6 @@ final class RepsOrTimerView: UIView {
         )
         
         backgroundView.addSubview(mainStackView)
-        
     }
     
     private func setDelegates() {
@@ -68,7 +67,15 @@ final class RepsOrTimerView: UIView {
         timerView.delegate = self
     }
     
+    //MARK: - Public Methods
+    
+    public func resetSliderViewValues() {
+        setsView.resetValues()
+        repsView.resetValues()
+        timerView.resetValues()
+    }
 }
+
 //MARK: - SliderViewProtocol
 extension RepsOrTimerView: SliderViewProtocol {
     func changeValue(type: SliderTypes, value: Int) {

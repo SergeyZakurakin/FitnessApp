@@ -44,20 +44,26 @@ final class NameView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
+    //MARK: - Private Methods
     private func setupViews() {
         translatesAutoresizingMaskIntoConstraints = false
         
         addSubview(nameLabel)
         addSubview(nameTextField)
         
+        nameTextField.delegate = self
+        
     }
     
+    //MARK: - Public Methods
     public func getNameFromTextField() -> String {
         guard let text = nameTextField.text else { return ""}
         return text
     }
-
+    
+    public func clearTextField() {
+        nameTextField.text = ""
+    }
 }
 
 //MARK: - setup Constraints
@@ -73,8 +79,22 @@ extension NameView {
             nameTextField.bottomAnchor.constraint(equalTo: bottomAnchor),
             nameTextField.leadingAnchor.constraint(equalTo: leadingAnchor),
             nameTextField.trailingAnchor.constraint(equalTo: trailingAnchor),
-
-        
         ])
     }
+}
+
+
+//MARK: - UITextFieldDelegate
+extension NameView: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // hide keyboard after press done
+        nameTextField.resignFirstResponder()
+        
+        return true
+    }
+    
+    
+    
+    
 }

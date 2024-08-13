@@ -47,6 +47,7 @@
 		DC9E913C2C686D2A0053D2A0 /* StartWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E913B2C686D2A0053D2A0 /* StartWorkoutView.swift */; };
 		DC9E913E2C6A94440053D2A0 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E913D2C6A94440053D2A0 /* SeparatorView.swift */; };
 		DC9E91612C6ACF660053D2A0 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DC9E91602C6ACF660053D2A0 /* RealmSwift */; };
+		DC9E91632C6AE5DC0053D2A0 /* UIViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E91622C6AE5DC0053D2A0 /* UIViewController + Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -104,6 +105,7 @@
 		DC9E91392C6862760053D2A0 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		DC9E913B2C686D2A0053D2A0 /* StartWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartWorkoutView.swift; sourceTree = "<group>"; };
 		DC9E913D2C6A94440053D2A0 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
+		DC9E91622C6AE5DC0053D2A0 /* UIViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 				DC9E90C72C63F3250053D2A0 /* StackView + Extensions.swift */,
 				DC9E90E32C65A7020053D2A0 /* UIButton + Extensions.swift */,
 				DC9E911C2C665DFC0053D2A0 /* UISlider + Extensions.swift */,
+				DC9E91622C6AE5DC0053D2A0 /* UIViewController + Extensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				DC9E912E2C67D1EB0053D2A0 /* WorkOutModel.swift in Sources */,
 				DC9E90BD2C6307CA0053D2A0 /* UIColor + Extensions.swift in Sources */,
 				DC9E90E22C6535730053D2A0 /* RepsOrTimerView.swift in Sources */,
+				DC9E91632C6AE5DC0053D2A0 /* UIViewController + Extensions.swift in Sources */,
 				DC9E91222C66F8B80053D2A0 /* SliderTypes.swift in Sources */,
 				DC9E90D72C65105D0053D2A0 /* MainTabBarController.swift in Sources */,
 				DC9E90BF2C63A7400053D2A0 /* CalendarCollectionView.swift in Sources */,
