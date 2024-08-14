@@ -46,8 +46,9 @@
 		DC9E913A2C6862760053D2A0 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E91392C6862760053D2A0 /* CloseButton.swift */; };
 		DC9E913C2C686D2A0053D2A0 /* StartWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E913B2C686D2A0053D2A0 /* StartWorkoutView.swift */; };
 		DC9E913E2C6A94440053D2A0 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E913D2C6A94440053D2A0 /* SeparatorView.swift */; };
-		DC9E91612C6ACF660053D2A0 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DC9E91602C6ACF660053D2A0 /* RealmSwift */; };
 		DC9E91632C6AE5DC0053D2A0 /* UIViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E91622C6AE5DC0053D2A0 /* UIViewController + Extensions.swift */; };
+		DC9E91662C6C2A390053D2A0 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DC9E91652C6C2A390053D2A0 /* RealmSwift */; };
+		DC9E91672C6C2A450053D2A0 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = DC9E91652C6C2A390053D2A0 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,6 +58,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				DC9E91672C6C2A450053D2A0 /* RealmSwift in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,7 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC9E91612C6ACF660053D2A0 /* RealmSwift in Frameworks */,
+				DC9E91662C6C2A390053D2A0 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,7 +412,7 @@
 			);
 			name = "Fitness app";
 			packageProductDependencies = (
-				DC9E91602C6ACF660053D2A0 /* RealmSwift */,
+				DC9E91652C6C2A390053D2A0 /* RealmSwift */,
 			);
 			productName = "Fitness app";
 			productReference = DC9E908F2C6190840053D2A0 /* Fitness app.app */;
@@ -441,7 +443,7 @@
 			);
 			mainGroup = DC9E90862C6190840053D2A0;
 			packageReferences = (
-				DC9E915F2C6ACF660053D2A0 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				DC9E91642C6C2A390053D2A0 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = DC9E90902C6190840053D2A0 /* Products */;
 			projectDirPath = "";
@@ -731,20 +733,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		DC9E915F2C6ACF660053D2A0 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		DC9E91642C6C2A390053D2A0 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
-				kind = upToNextMinorVersion;
+				kind = upToNextMajorVersion;
 				minimumVersion = 10.52.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DC9E91602C6ACF660053D2A0 /* RealmSwift */ = {
+		DC9E91652C6C2A390053D2A0 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DC9E915F2C6ACF660053D2A0 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = DC9E91642C6C2A390053D2A0 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

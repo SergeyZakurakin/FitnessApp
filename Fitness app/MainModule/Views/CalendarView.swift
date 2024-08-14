@@ -36,6 +36,11 @@ final class CalendarView: UIView {
         
     }
     
+    //MARK: - Public Methods
+    public func SetDelegate(_ delegate: CalendarViewProtocol?) {
+        collectionView.callendarDelegate = delegate
+    }
+    
     
 }
 //MARK: - Setup Constraints

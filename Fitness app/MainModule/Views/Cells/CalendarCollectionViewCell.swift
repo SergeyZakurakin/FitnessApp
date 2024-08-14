@@ -67,6 +67,14 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         addSubview(dayOfWeekLabel)
         addSubview(numberOfDayLabel)
     }    
+    //MARK: - Public Methods
+    
+    public func dateForCell(numberOfDay: String, dayOfWeek: String) {
+        dayOfWeekLabel.text = dayOfWeek
+        numberOfDayLabel.text = numberOfDay
+    }
+    
+    
 }
 //MARK: - Setup Constraints
 extension CalendarCollectionViewCell {

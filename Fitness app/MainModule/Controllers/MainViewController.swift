@@ -60,7 +60,7 @@ final class MainViewController: UIViewController {
         return element
     }()
     // зеленое вю на главный экран
-    private let calendar = CalendarView()
+    private let calendarView = CalendarView()
     // белое вю с солнышком
     private let weatherView = WeatherView()
     // созданый лейбл в Extension
@@ -86,7 +86,8 @@ final class MainViewController: UIViewController {
     private func setupViews() {
         view.backgroundColor = .specialBackground
         
-        view.addSubview(calendar)
+        view.addSubview(calendarView)
+        calendarView.SetDelegate(self)
         view.addSubview(userImageImageView)
         view.addSubview(userNameLabel)
         view.addSubview(addWorkoutButton)
@@ -104,6 +105,14 @@ final class MainViewController: UIViewController {
         present(newWorkoutVC, animated: true)
     }
 }
+//MARK: - CalendarViewProtocol
+extension MainViewController: CalendarViewProtocol {
+    func selectItem(date: Date) {
+        print(date)
+    }
+    
+    
+}
 
 //MARK: - Setup Constraints
 extension MainViewController {
@@ -115,21 +124,21 @@ extension MainViewController {
             userImageImageView.heightAnchor.constraint(equalToConstant: 100),
             userImageImageView.widthAnchor.constraint(equalToConstant: 100),
             
-            calendar.topAnchor.constraint(equalTo: userImageImageView.centerYAnchor),
-            calendar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            calendar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            calendar.heightAnchor.constraint(equalToConstant: 70),
+            calendarView.topAnchor.constraint(equalTo: userImageImageView.centerYAnchor),
+            calendarView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            calendarView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            calendarView.heightAnchor.constraint(equalToConstant: 70),
             
-            userNameLabel.bottomAnchor.constraint(equalTo: calendar.topAnchor, constant: -10),
+            userNameLabel.bottomAnchor.constraint(equalTo: calendarView.topAnchor, constant: -10),
             userNameLabel.leadingAnchor.constraint(equalTo: userImageImageView.trailingAnchor, constant: 5),
             userNameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             
-            addWorkoutButton.topAnchor.constraint(equalTo: calendar.bottomAnchor,constant: 10),
+            addWorkoutButton.topAnchor.constraint(equalTo: calendarView.bottomAnchor,constant: 10),
             addWorkoutButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             addWorkoutButton.heightAnchor.constraint(equalToConstant: 80),
             addWorkoutButton.widthAnchor.constraint(equalToConstant: 80),
             
-            weatherView.topAnchor.constraint(equalTo: calendar.bottomAnchor, constant: 10),
+            weatherView.topAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: 10),
             weatherView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             weatherView.leadingAnchor.constraint(equalTo: addWorkoutButton.trailingAnchor, constant: 10),
             weatherView.heightAnchor.constraint(equalToConstant: 80),
