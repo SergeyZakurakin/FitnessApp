@@ -49,6 +49,7 @@
 		DC9E91632C6AE5DC0053D2A0 /* UIViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E91622C6AE5DC0053D2A0 /* UIViewController + Extensions.swift */; };
 		DC9E91662C6C2A390053D2A0 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DC9E91652C6C2A390053D2A0 /* RealmSwift */; };
 		DC9E91672C6C2A450053D2A0 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = DC9E91652C6C2A390053D2A0 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		DC9E916A2C6E67290053D2A0 /* DifferenceWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E91692C6E67290053D2A0 /* DifferenceWorkout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -108,6 +109,7 @@
 		DC9E913B2C686D2A0053D2A0 /* StartWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartWorkoutView.swift; sourceTree = "<group>"; };
 		DC9E913D2C6A94440053D2A0 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		DC9E91622C6AE5DC0053D2A0 /* UIViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extensions.swift"; sourceTree = "<group>"; };
+		DC9E91692C6E67290053D2A0 /* DifferenceWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifferenceWorkout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +254,7 @@
 		DC9E90CB2C6444990053D2A0 /* StatisticModule */ = {
 			isa = PBXGroup;
 			children = (
+				DC9E91682C6E670E0053D2A0 /* Models */,
 				DC9E90CD2C6444C40053D2A0 /* Views */,
 				DC9E90CC2C6444B50053D2A0 /* Controllers */,
 			);
@@ -394,6 +397,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DC9E91682C6E670E0053D2A0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DC9E91692C6E67290053D2A0 /* DifferenceWorkout.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -485,6 +496,7 @@
 				DC9E90E22C6535730053D2A0 /* RepsOrTimerView.swift in Sources */,
 				DC9E91632C6AE5DC0053D2A0 /* UIViewController + Extensions.swift in Sources */,
 				DC9E91222C66F8B80053D2A0 /* SliderTypes.swift in Sources */,
+				DC9E916A2C6E67290053D2A0 /* DifferenceWorkout.swift in Sources */,
 				DC9E90D72C65105D0053D2A0 /* MainTabBarController.swift in Sources */,
 				DC9E90BF2C63A7400053D2A0 /* CalendarCollectionView.swift in Sources */,
 				DC9E90CF2C6445050053D2A0 /* StatisticViewController.swift in Sources */,

@@ -22,7 +22,7 @@ class StatisticTableViewCell: UITableViewCell {
         return element
     }()
     
-    private let ratingLabel: UILabel = {
+    private let differenceLabel: UILabel = {
         let element = UILabel()
         element.text = "+2"
         element.textColor = .specialGreen
@@ -61,7 +61,7 @@ class StatisticTableViewCell: UITableViewCell {
         
         
         addSubview(workoutLabel)
-        addSubview(ratingLabel)
+        addSubview(differenceLabel)
         addSubview(seporatorView)
         
         labelStackView = UIStackView(
@@ -70,6 +70,24 @@ class StatisticTableViewCell: UITableViewCell {
             spacing: 10
         )
         addSubview(labelStackView)
+    }
+    
+    //MARK: - Public Methods
+    public func configure(differenceWorkout: DifferenceWorkout) {
+        workoutLabel.text = differenceWorkout.name
+        beforeLabel.text = "Before: \(differenceWorkout.firstReps)"
+        nowLabel.text = "Now: \(differenceWorkout.lastReps)"
+        
+        let difference = differenceWorkout.lastReps - differenceWorkout.firstReps
+        differenceLabel.text = "\(difference)"
+        
+        switch difference {
+        case ..<0: differenceLabel.textColor = .specialGreen
+        case 1...: differenceLabel.textColor = .blue
+        default:
+            differenceLabel.textColor = .specialGray
+        }
+        
     }
 }
 //MARK: - Setup Constraints
@@ -88,8 +106,8 @@ extension StatisticTableViewCell {
             seporatorView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             seporatorView.heightAnchor.constraint(equalToConstant: 1),
             
-            ratingLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            ratingLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            differenceLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            differenceLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
         ])
     }
 }

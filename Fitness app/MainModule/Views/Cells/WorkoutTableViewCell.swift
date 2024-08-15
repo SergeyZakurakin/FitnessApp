@@ -7,10 +7,16 @@
 
 import UIKit
 
+protocol WorkoutCellProtocol: AnyObject {
+    func startButtonPressed(model: WorkOutModel)
+}
+
 
 final class WorkoutTableViewCell: UITableViewCell {
     
     static let idTableViewCell = "idTableViewCell"
+    
+    weak var workoutCellDelegate: WorkoutCellProtocol?
     
     private let backgroundCellView: UIView = {
         let element = UIView()
@@ -50,7 +56,7 @@ final class WorkoutTableViewCell: UITableViewCell {
         return element
     }()
     
-    private let workoutRspsLabel: UILabel = {
+    private let workoutRepsLabel: UILabel = {
         let element = UILabel()
         element.text = "Reps: 10"
         element.textColor = .specialGray
@@ -86,6 +92,8 @@ final class WorkoutTableViewCell: UITableViewCell {
     
     private var labelsStackView = UIStackView()
     
+    private var workoutModel = WorkOutModel()
+    
     
     //MARK: - Life Cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -110,7 +118,7 @@ final class WorkoutTableViewCell: UITableViewCell {
         addSubview(workoutNameLabel)
         
         labelsStackView = UIStackView(
-            arrangedSubviews: [workoutRspsLabel, workoutSetsLabel],
+            arrangedSubviews: [workoutRepsLabel, workoutSetsLabel],
             axis: .horizontal,
             spacing: 10
         )
@@ -122,7 +130,39 @@ final class WorkoutTableViewCell: UITableViewCell {
     
     
     @objc private func startButtonPressed() {
+        workoutCellDelegate?.startButtonPressed(model: workoutModel)
+        
         print("tableView cell tap")
+    }
+    
+    //MARK: - Public Methods
+    public func configure(model: WorkOutModel) {
+        workoutModel = model
+        workoutNameLabel.text = model.workOutName
+        if model.workOutTimer == 0 {
+            workoutRepsLabel.text = "Reps: \(model.workOutReps)"
+        } else {
+            workoutRepsLabel.text = "Timer: \(model.workOutTimer.getTimeFromSeconds())"
+        }
+        
+        workoutSetsLabel.text = "Sets: \(model.workOutSets)"
+        
+        if model.workOutStatus {
+            startButton.setTitle("COMPLETE", for: .normal)
+            startButton.tintColor = .white
+            startButton.backgroundColor = .specialDarkGreen
+            startButton.isEnabled = false
+        } else {
+            startButton.setTitle("START", for: .normal)
+            startButton.tintColor = .specialDarkGreen
+            startButton.backgroundColor = .specialYellow
+            startButton.isEnabled = true
+        }
+        
+        guard let imageData = model.workOutImage,
+        let image = UIImage(data: imageData) else { return }
+        
+        workoutImageView.image = image.withRenderingMode(.alwaysTemplate)
     }
 }
 

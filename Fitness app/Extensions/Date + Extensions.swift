@@ -43,7 +43,34 @@ extension Date {
     }
     
     func offsetDay(day: Int) -> Date {
-        let offsetDay = Calendar.current.date(byAdding: .day, value: -day, to: self) ?? Date()
+        let offsetDate = Calendar.current.date(byAdding: .day, value: -day, to: self) ?? Date()
+        return offsetDate
+    }
+    
+    
+    func offsetMonth(month: Int) -> Date {
+        let offsetDay = Calendar.current.date(byAdding: .month, value: -month, to: self) ?? Date()
         return offsetDay
+    }
+    
+    
+    
+    func startEndDate() -> (start: Date, end: Date) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        
+        let calendar = Calendar.current
+        let day = calendar.component(.day, from: self)
+        let month = calendar.component(.month, from: self)
+        let year = calendar.component(.year, from: self)
+        
+        let dateStart = formatter.date(from: "\(year)/\(month)/\(day)") ?? Date()
+        
+        let local = dateStart.localeDate()
+        let dateEnd: Date = {
+            let components = DateComponents(day: 1)
+            return calendar.date(byAdding: components, to: local) ?? Date()
+        }()
+        return (local, dateEnd)
     }
 }

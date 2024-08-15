@@ -9,6 +9,7 @@ import UIKit
 
 class StatisticTableView: UITableView {
     
+    private var differenceArray: [DifferenceWorkout] = []
     
     //MARK: - Life Cycle
     override init(frame: CGRect, style: UITableView.Style) {
@@ -40,17 +41,24 @@ class StatisticTableView: UITableView {
         dataSource = self
         delegate = self
     }
+    
+    //MARK: - Public Methods
+    public func setDifferenceArray(array: [DifferenceWorkout]) {
+        differenceArray = array
+    }
+    
 }
 
 //MARK: - UITableViewDataSource
 extension StatisticTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        7
+        differenceArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: StatisticTableViewCell.idTableViewCell, for: indexPath) as? StatisticTableViewCell else { return UITableViewCell() }
-        
+        let model = differenceArray[indexPath.row]
+        cell.configure(differenceWorkout: model)
         
         return cell
     }

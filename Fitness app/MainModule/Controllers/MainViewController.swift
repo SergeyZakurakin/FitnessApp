@@ -12,7 +12,7 @@ final class MainViewController: UIViewController {
     //MARK: - Setup UI
     private let userImageImageView: UIImageView = {
         let element = UIImageView()
-        element.backgroundColor = #colorLiteral(red: 0.8044065833, green: 0.8044064641, blue: 0.8044064641, alpha: 1)  // #colorLiteral()
+        element.backgroundColor = #colorLiteral(red: 0.8044065833, green: 0.8044064641, blue: 0.8044064641, alpha: 1)  // #colorLiteral() (note)
         element.layer.borderColor = UIColor.white.cgColor
         element.layer.borderWidth = 5
         
@@ -37,6 +37,7 @@ final class MainViewController: UIViewController {
         element.backgroundColor = .specialYellow
         element.tintColor = .specialDarkGreen
         element.titleLabel?.font = .robotoMedium12()
+        // deprecated redo!
         element.imageEdgeInsets = .init(
             top: 0,
             left: 20,
@@ -59,14 +60,28 @@ final class MainViewController: UIViewController {
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
     }()
-    // зеленое вю на главный экран
+    
+    private let noWorkoutImageView: UIImageView = {
+        let element = UIImageView()
+        element.image = UIImage(named: "noImage")
+        element.contentMode = .scaleAspectFit
+        
+        element.translatesAutoresizingMaskIntoConstraints = false
+        return element
+    }()
+    
+    // green View on main screen
     private let calendarView = CalendarView()
-    // белое вю с солнышком
+    // white View with sun
     private let weatherView = WeatherView()
-    // созданый лейбл в Extension
+
     private let workoutTodayLabel = UILabel(text: "Workout today")
     
     private let workoutTableView = MainTableView()
+    
+    //MARK: - Private Properties
+    private var workoutArray: [WorkOutModel] = []
+    
     
 
     //MARK: - Life Cycle
@@ -75,11 +90,19 @@ final class MainViewController: UIViewController {
         userImageImageView.layer.cornerRadius = userImageImageView.frame.width / 2
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        selectItem(date: Date())
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
         setupConstraints()
+        selectItem(date: Date())
+        
     }
 
     //MARK: - Setup Views
@@ -87,13 +110,18 @@ final class MainViewController: UIViewController {
         view.backgroundColor = .specialBackground
         
         view.addSubview(calendarView)
+        
         calendarView.SetDelegate(self)
+        
         view.addSubview(userImageImageView)
         view.addSubview(userNameLabel)
         view.addSubview(addWorkoutButton)
         view.addSubview(weatherView)
         view.addSubview(workoutTodayLabel)
         view.addSubview(workoutTableView)
+        workoutTableView.mainDelegate = self
+        view.addSubview(noWorkoutImageView)
+        
         
     }
     
@@ -104,11 +132,67 @@ final class MainViewController: UIViewController {
         
         present(newWorkoutVC, animated: true)
     }
+    
+    private func getWorkouts(date: Date) {
+        let weekday = date.getWeekDayNumber()
+        let dateStart = date.startEndDate().start
+        let dateEnd = date.startEndDate().end
+        
+        let predicateRepeat = NSPredicate(format: "workOutNumberOfDay = \(weekday) AND workOutRepeat = true")
+        let predicateOffRepeat = NSPredicate(format: "workOutRepeat = false AND workOutDate BETWEEN %@", [dateStart, dateEnd])
+        
+        let compound = NSCompoundPredicate(type: .or, subpredicates: [predicateRepeat, predicateOffRepeat])
+        
+        let resultArray = RealmManager.shared.getResultWorkoutModel()
+        let filteredArray = resultArray.filter(compound).sorted(byKeyPath: "workOutName")
+        workoutArray = filteredArray.map { $0 }
+    }
+    
+    private func checkWorkoutToday() {
+        if workoutArray.count == 0 {
+            noWorkoutImageView.isHidden = false
+            workoutTableView.isHidden = true
+        } else {
+            noWorkoutImageView.isHidden = true
+            workoutTableView.isHidden = false
+        }
+    }
 }
+
+//MARK: - WorkoutCellProtocol
+extension MainViewController: WorkoutCellProtocol {
+    func startButtonPressed(model: WorkOutModel) {
+        if model.workOutTimer == 0 {
+            print("Reps")
+        } else {
+            print("Timer")
+        }
+    }
+    
+    
+}
+
+
+
 //MARK: - CalendarViewProtocol
 extension MainViewController: CalendarViewProtocol {
     func selectItem(date: Date) {
-        print(date)
+//        print(date.startEndDate().start, date.startEndDate().end)
+        getWorkouts(date: date)
+        workoutTableView.setWorkoutArray(array: workoutArray)
+        workoutTableView.reloadData()
+        checkWorkoutToday()
+//        print(workoutArray)
+    }
+}
+
+//MARK: - MainTableViewProtocol
+extension MainViewController: MainTableViewProtocol {
+    func deleteWorkout(model: WorkOutModel, index: Int) {
+        RealmManager.shared.deleteWorkoutModel(model)
+        workoutArray.remove(at: index)
+        workoutTableView.setWorkoutArray(array: workoutArray)
+        workoutTableView.reloadData()
     }
     
     
@@ -150,10 +234,13 @@ extension MainViewController {
             workoutTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             workoutTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             workoutTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            
+            noWorkoutImageView.topAnchor.constraint(equalTo: workoutTodayLabel.bottomAnchor),
+            noWorkoutImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            noWorkoutImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            noWorkoutImageView.heightAnchor.constraint(equalTo: noWorkoutImageView.widthAnchor, multiplier: 1),
+
+            
         ])
-        
-        
-        
     }
-  
 }

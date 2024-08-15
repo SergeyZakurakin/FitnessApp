@@ -14,11 +14,26 @@ class RealmManager {
     
     let realm = try! Realm()
     
+    // load all data
+    func getResultWorkoutModel() -> Results<WorkOutModel> {
+        realm.objects(WorkOutModel.self)
+    }
+    
+    // save
     func saveWorkoutModel(_ model: WorkOutModel) {
         try! realm.write {
             realm.add(model)
         }
-    }   
+    }  
+    
+    //delete
+    func deleteWorkoutModel(_ model: WorkOutModel) {
+        try! realm.write {
+            realm.delete(model)
+        }
+    }
+    
+    
 }
 
 
