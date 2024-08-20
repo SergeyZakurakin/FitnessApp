@@ -1,5 +1,5 @@
 //
-//  StartWorkoutView.swift
+//  RepsWorkoutView.swift
 //  Fitness app
 //
 //  Created by Sergey Zakurakin on 8/10/24.
@@ -7,7 +7,12 @@
 
 import UIKit
 
-final class StartWorkoutView: UIView {
+protocol NextSetProtocol: AnyObject {
+    func nextSetTapped()
+    func editingTapped()
+}
+
+final class RepsWorkoutView: UIView {
     
     //MARK: - setup UI
     private let workoutBackground: UIView = {
@@ -19,7 +24,7 @@ final class StartWorkoutView: UIView {
         return element
     }()
     
-    private let titleLabel = UILabel(
+    private let workoutNameLabel = UILabel(
         text: "Biceps",
         font: .robotoBold24(),
         textColor: .specialGray
@@ -81,6 +86,9 @@ final class StartWorkoutView: UIView {
         return element
     }()
     
+    weak var cellNextSetDelegate: NextSetProtocol?
+    
+    
     //MARK: - Life Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -94,11 +102,11 @@ final class StartWorkoutView: UIView {
     
     //MARK: - Actions
     @objc private func editingButtonPressed() {
-        print("editing")
+        cellNextSetDelegate?.editingTapped()
     }
     
     @objc private func nextSetButtonPressed() {
-        print("next set")
+        cellNextSetDelegate?.nextSetTapped()
     }
     
     
@@ -108,7 +116,7 @@ final class StartWorkoutView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         
         addSubview(workoutBackground)
-        workoutBackground.addSubview(titleLabel)
+        workoutBackground.addSubview(workoutNameLabel)
         
         setsStackView = UIStackView(
             arrangedSubviews: [setsNameLabel, setsNumberLabel],
@@ -128,10 +136,18 @@ final class StartWorkoutView: UIView {
         workoutBackground.addSubview(editingButton)
         workoutBackground.addSubview(nextSetButton)
     }
+    
+    //MARK: - Public Methods
+    public func refreshLabels(model: WorkOutModel, numberOfSets: Int) {
+        workoutNameLabel.text = model.workOutName
+        setsNumberLabel.text = "\(numberOfSets)/\(model.workOutSets)"
+        repsNumberLabel.text = "\(model.workOutReps)"
+        
+    }
 }
 
 //MARK: - Setup Constraints
-extension StartWorkoutView {
+extension RepsWorkoutView {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
         
@@ -141,10 +157,10 @@ extension StartWorkoutView {
             workoutBackground.trailingAnchor.constraint(equalTo: trailingAnchor),
             workoutBackground.heightAnchor.constraint(equalToConstant: 230),
             
-            titleLabel.centerXAnchor.constraint(equalTo: workoutBackground.centerXAnchor),
-            titleLabel.topAnchor.constraint(equalTo: workoutBackground.topAnchor, constant: 10),
+            workoutNameLabel.centerXAnchor.constraint(equalTo: workoutBackground.centerXAnchor),
+            workoutNameLabel.topAnchor.constraint(equalTo: workoutBackground.topAnchor, constant: 10),
             
-            setsStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
+            setsStackView.topAnchor.constraint(equalTo: workoutNameLabel.bottomAnchor, constant: 10),
             setsStackView.leadingAnchor.constraint(equalTo: workoutBackground.leadingAnchor, constant: 10),
             setsStackView.trailingAnchor.constraint(equalTo: workoutBackground.trailingAnchor, constant: -10),
             

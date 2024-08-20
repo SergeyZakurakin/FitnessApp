@@ -21,11 +21,11 @@ final class RepsOrTimerView: UIView {
         return element
     }()
     
-    private let setsView = SliderView(name: "Sets", maxValue: 10, type: .sets)
+    private let setsView = SliderView(name: "Sets", maxValue: 50, type: .sets)
     
     private let chooseRepeatsLabel = UILabel(text: "Choose repeats or timer")
     
-    private let repsView = SliderView(name: "Reps", maxValue: 10, type: .reps)
+    private let repsView = SliderView(name: "Reps", maxValue: 50, type: .reps)
     private let timerView = SliderView(name: "Timer", maxValue: 600, type: .timer)
     
     private var mainStackView = UIStackView()

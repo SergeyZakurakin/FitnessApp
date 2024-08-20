@@ -163,9 +163,16 @@ final class MainViewController: UIViewController {
 extension MainViewController: WorkoutCellProtocol {
     func startButtonPressed(model: WorkOutModel) {
         if model.workOutTimer == 0 {
-            print("Reps")
+            let repsWorkoutVC = RepsWorkoutViewController()
+            repsWorkoutVC.setWorkoutModel(model)
+            repsWorkoutVC.modalPresentationStyle = .fullScreen
+            present(repsWorkoutVC, animated: true)
         } else {
-            print("Timer")
+            print("timer")
+//            let timerWorkoutVC = TimerViewController()
+            //timerWorkoutVC.setWorkoutModel(model)
+//            timerWorkoutVC.modalPresentationStyle = .fullScreen
+//            present(timerWorkoutVC, animated: true)
         }
     }
     
