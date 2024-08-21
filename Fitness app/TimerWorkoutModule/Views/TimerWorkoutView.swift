@@ -1,18 +1,18 @@
 //
-//  RepsWorkoutView.swift
+//  TimerWorkoutView.swift
 //  Fitness app
 //
-//  Created by Sergey Zakurakin on 8/10/24.
+//  Created by Sergey Zakurakin on 8/20/24.
 //
 
 import UIKit
 
-protocol NextSetProtocol: AnyObject {
+protocol NextSetTimerProtocol: AnyObject {
     func nextSetTapped()
     func editingTapped()
 }
 
-final class RepsWorkoutView: UIView {
+final class TimerWorkoutView: UIView {
     
     //MARK: - setup UI
     private let workoutBackground: UIView = {
@@ -46,15 +46,15 @@ final class RepsWorkoutView: UIView {
     
     private var setsSeparatorView = SeparatorView()
     
-    private var repsStackView = UIStackView()
+    private var timerStackView = UIStackView()
     
-    private let respNameLabel = UILabel(
-        text: "Reps",
+    private let timerNameLabel = UILabel(
+        text: "Timer of set",
         font: .robotoMedium22(),
         textColor: .specialGray
     )
     
-    private let repsNumberLabel = UILabel(
+    private let timerNumberLabel = UILabel(
         text: "20",
         font: .robotoMedium22(),
         textColor: .specialGray
@@ -86,7 +86,9 @@ final class RepsWorkoutView: UIView {
         return element
     }()
     
-    weak var cellNextSetDelegate: NextSetProtocol?
+    weak var cellNextSetTimerDelegate: NextSetTimerProtocol?
+    
+//    weak var cellNextSetDelegate: NextSetProtocol?
     
     
     //MARK: - Life Cycle
@@ -100,14 +102,16 @@ final class RepsWorkoutView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Actions
+   //MARK: - Actions
     @objc private func editingButtonPressed() {
-        cellNextSetDelegate?.editingTapped()
+        cellNextSetTimerDelegate?.editingTapped()
     }
     
     @objc private func nextSetButtonPressed() {
-        cellNextSetDelegate?.nextSetTapped()
+        cellNextSetTimerDelegate?.nextSetTapped()
     }
+    
+    
     
     //MARK: - Private Methods
     private func setupViews() {
@@ -119,17 +123,18 @@ final class RepsWorkoutView: UIView {
         setsStackView = UIStackView(
             arrangedSubviews: [setsNameLabel, setsNumberLabel],
             axis: .horizontal,
-            spacing: 10
-        )
+            spacing: 10)
+        
         workoutBackground.addSubview(setsStackView)
         workoutBackground.addSubview(setsSeparatorView)
         
-        repsStackView = UIStackView(
-            arrangedSubviews: [respNameLabel, repsNumberLabel],
+        timerStackView = UIStackView(
+            arrangedSubviews: [timerNameLabel, timerNumberLabel],
             axis: .horizontal,
-            spacing: 10
-        )
-        workoutBackground.addSubview(repsStackView)
+            spacing: 10)
+        timerNumberLabel.textAlignment = .right
+        
+        workoutBackground.addSubview(timerStackView)
         workoutBackground.addSubview(repsSeparatorView)
         workoutBackground.addSubview(editingButton)
         workoutBackground.addSubview(nextSetButton)
@@ -139,12 +144,18 @@ final class RepsWorkoutView: UIView {
     public func refreshLabels(model: WorkOutModel, numberOfSets: Int) {
         workoutNameLabel.text = model.workOutName
         setsNumberLabel.text = "\(numberOfSets)/\(model.workOutSets)"
-        repsNumberLabel.text = "\(model.workOutReps)"
+        timerNumberLabel.text = "\(model.workOutTimer.getTimeFromSeconds())"
+        
+    }
+    
+    public func buttonsIsEnable(_ value: Bool) {
+        editingButton.isEnabled = value
+        nextSetButton.isEnabled = value
     }
 }
 
 //MARK: - Setup Constraints
-extension RepsWorkoutView {
+extension TimerWorkoutView {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
         
@@ -166,11 +177,11 @@ extension RepsWorkoutView {
             setsSeparatorView.trailingAnchor.constraint(equalTo: workoutBackground.trailingAnchor, constant: -10),
             setsSeparatorView.heightAnchor.constraint(equalToConstant: 1),
             
-            repsStackView.topAnchor.constraint(equalTo: setsSeparatorView.bottomAnchor, constant: 20),
-            repsStackView.leadingAnchor.constraint(equalTo: workoutBackground.leadingAnchor, constant: 10),
-            repsStackView.trailingAnchor.constraint(equalTo: workoutBackground.trailingAnchor, constant: -10),
+            timerStackView.topAnchor.constraint(equalTo: setsSeparatorView.bottomAnchor, constant: 20),
+            timerStackView.leadingAnchor.constraint(equalTo: workoutBackground.leadingAnchor, constant: 10),
+            timerStackView.trailingAnchor.constraint(equalTo: workoutBackground.trailingAnchor, constant: -10),
             
-            repsSeparatorView.topAnchor.constraint(equalTo: repsStackView.bottomAnchor, constant: 5),
+            repsSeparatorView.topAnchor.constraint(equalTo: timerStackView.bottomAnchor, constant: 5),
             repsSeparatorView.leadingAnchor.constraint(equalTo: workoutBackground.leadingAnchor, constant: 10),
             repsSeparatorView.trailingAnchor.constraint(equalTo: workoutBackground.trailingAnchor, constant: -10),
             repsSeparatorView.heightAnchor.constraint(equalToConstant: 1),
@@ -182,6 +193,9 @@ extension RepsWorkoutView {
             nextSetButton.leadingAnchor.constraint(equalTo: workoutBackground.leadingAnchor, constant: 20),
             nextSetButton.trailingAnchor.constraint(equalTo: workoutBackground.trailingAnchor, constant: -20),
             nextSetButton.heightAnchor.constraint(equalToConstant: 40),
+
+            
         ])
     }
 }
+

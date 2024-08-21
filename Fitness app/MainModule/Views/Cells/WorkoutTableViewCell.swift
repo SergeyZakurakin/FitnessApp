@@ -90,10 +90,8 @@ final class WorkoutTableViewCell: UITableViewCell {
         return element
     }()
     
-    private var labelsStackView = UIStackView()
-    
+    private var labelsStackView = UIStackView()    
     private var workoutModel = WorkOutModel()
-    
     
     //MARK: - Life Cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -101,7 +99,6 @@ final class WorkoutTableViewCell: UITableViewCell {
         
         setupView()
         setupConstraints()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -124,13 +121,14 @@ final class WorkoutTableViewCell: UITableViewCell {
         )
         addSubview(labelsStackView)
         contentView.addSubview(startButton)
-        
-        
     }
     
     
     @objc private func startButtonPressed() {
         workoutCellDelegate?.startButtonPressed(model: workoutModel)
+        
+//        let timerVC = TimerWorkoutViewController()
+        
         
         print("tableView cell tap")
     }

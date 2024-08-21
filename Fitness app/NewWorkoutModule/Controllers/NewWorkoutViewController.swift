@@ -25,10 +25,10 @@ final class NewWorkoutViewController: UIViewController {
     private let repsOrTimerView = RepsOrTimerView()
     
     private lazy var saveButton = UIButton(text: "SAVE")
+    private let testImage = UIImage(named: "imageCell") // change image name
     
     private var workOutModel = WorkOutModel()
     
-    private let testImage = UIImage(named: "imageCell") // change image name
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -107,13 +107,11 @@ final class NewWorkoutViewController: UIViewController {
         let swipeScreen = UISwipeGestureRecognizer(target: self, action: #selector(hideKeyboard))
         swipeScreen.cancelsTouchesInView = false
         view.addGestureRecognizer(swipeScreen)
-        
     }
     
     @objc private func hideKeyboard() {
         view.endEditing(true)
     }
-    
     
     //MARK: - Setup Views
     private func setupView() {
@@ -127,8 +125,6 @@ final class NewWorkoutViewController: UIViewController {
         view.addSubview(saveButton)
     }
 }
-
-
 
 //MARK: - Setup Constraints
 extension NewWorkoutViewController {

@@ -70,8 +70,6 @@ class DateAndRepeatView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    
     //MARK: - Setup Views
     private func setupViews() {
         translatesAutoresizingMaskIntoConstraints = false
@@ -107,8 +105,6 @@ class DateAndRepeatView: UIView {
         repeatSwitcher.isOn = true
     }
 }
-
-
 
 //MARK: - Setup Constraints
 extension DateAndRepeatView {

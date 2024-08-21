@@ -42,6 +42,14 @@ class RealmManager {
         }
     }
     
+    func updateSetsTimerWorkoutModel(model: WorkOutModel, sets: Int, timer: Int) {
+        try! realm.write {
+            model.workOutSets = sets
+            model.workOutTimer = timer
+            
+        }
+    }
+    
     //update Status
     func updateStatusWorkoutModel(model: WorkOutModel) {
         try! realm.write {
@@ -50,3 +58,6 @@ class RealmManager {
         }
     }
 }
+
+
+

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-// настройка самой ячейки
+//setup cell
 class CalendarCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Setup UI
@@ -32,7 +32,7 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         return element
     }()
     
-    // isSelected стандартный метод, показывает что делать когда ячейка выделеная
+    // isSelected default method, showing what to do when cell is selected
     override var isSelected: Bool {
         didSet {
             if isSelected == true {
@@ -50,11 +50,8 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     //MARK: - Life Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         setupViews()
         setupConstraints()
-        
-        
     }
     
     required init?(coder: NSCoder) {
@@ -68,14 +65,12 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         addSubview(numberOfDayLabel)
     }    
     //MARK: - Public Methods
-    
     public func dateForCell(numberOfDay: String, dayOfWeek: String) {
         dayOfWeekLabel.text = dayOfWeek
         numberOfDayLabel.text = numberOfDay
     }
-    
-    
 }
+
 //MARK: - Setup Constraints
 extension CalendarCollectionViewCell {
     
@@ -86,12 +81,6 @@ extension CalendarCollectionViewCell {
             
             numberOfDayLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             numberOfDayLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
-        
-        
         ])
-        
-        
     }
-    
-    
 }

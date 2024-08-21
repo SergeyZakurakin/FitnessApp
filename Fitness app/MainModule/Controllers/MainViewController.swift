@@ -169,10 +169,10 @@ extension MainViewController: WorkoutCellProtocol {
             present(repsWorkoutVC, animated: true)
         } else {
             print("timer")
-//            let timerWorkoutVC = TimerViewController()
-            //timerWorkoutVC.setWorkoutModel(model)
-//            timerWorkoutVC.modalPresentationStyle = .fullScreen
-//            present(timerWorkoutVC, animated: true)
+            let timerWorkoutVC = TimerWorkoutViewController()
+            timerWorkoutVC.setWorkoutModel(model)
+            timerWorkoutVC.modalPresentationStyle = .fullScreen
+            present(timerWorkoutVC, animated: true)
         }
     }
     

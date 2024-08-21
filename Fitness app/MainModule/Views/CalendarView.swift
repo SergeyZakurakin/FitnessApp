@@ -52,12 +52,6 @@ extension CalendarView {
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 110),
-
-        
-        
         ])
-        
-        
-        
     }
 }

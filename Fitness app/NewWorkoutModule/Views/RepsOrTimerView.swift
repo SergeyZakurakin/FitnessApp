@@ -93,7 +93,6 @@ extension RepsOrTimerView: SliderViewProtocol {
             repsView.isActive = false
             reps = 0
         }
-        
     }
 }
 

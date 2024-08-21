@@ -7,10 +7,7 @@
 
 import UIKit
 
-
-
 final class RepsWorkoutViewController: UIViewController {
-    
     
     //MARK: - UI
     private let startWorkoutLabel = UILabel(
@@ -35,11 +32,9 @@ final class RepsWorkoutViewController: UIViewController {
     private lazy var finishButton = UIButton(text: "FINISH")
     private var workoutModel = WorkOutModel()
     private let customAlert = CustomAlert()
-    
     private var numberOfSet = 1
     
     //MARK: - Life Cycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,6 +58,7 @@ final class RepsWorkoutViewController: UIViewController {
         closeButton.addTarget(self, action: #selector(closeButtonPressed), for: .touchUpInside)
         finishButton.addTarget(self, action: #selector(finishButtonPressed), for: .touchUpInside)
     }
+    
     //MARK: - Actions
     @objc private func closeButtonPressed() {
         dismiss(animated: true)
@@ -86,6 +82,7 @@ final class RepsWorkoutViewController: UIViewController {
         workoutModel = model
     }
 }
+
 //MARK: - NextSetProtocol
 extension RepsWorkoutViewController: NextSetProtocol {
     func nextSetTapped() {
@@ -99,26 +96,20 @@ extension RepsWorkoutViewController: NextSetProtocol {
     
     func editingTapped() {
         customAlert.presentCustomAlert( viewController: self, repsOrTimer: "Reps") { [weak self] sets, reps in
-                guard let self else { return }
-                if sets != "" && reps != "" {
-                    guard let numberOfSets = Int(sets),
-                          let numberOfReps = Int(reps) else { return }
-                    RealmManager.shared.updateSetsRepsWorkoutModel(
-                        model: workoutModel,
-                        sets: numberOfSets,
-                        reps: numberOfReps
-                    )
-                    repsWorkoutView.refreshLabels(model: workoutModel, numberOfSets: numberOfSet)
-                }
-                
-                print(sets, reps)
+            guard let self else { return }
+            if sets != "" && reps != "" {
+                guard let numberOfSets = Int(sets),
+                      let numberOfReps = Int(reps) else { return }
+                RealmManager.shared.updateSetsRepsWorkoutModel(
+                    model: workoutModel,
+                    sets: numberOfSets,
+                    reps: numberOfReps
+                )
+                repsWorkoutView.refreshLabels(model: workoutModel, numberOfSets: numberOfSet)
             }
+        }
     }
-    
-    
 }
-
-
 
 //MARK: - setup Constraints
 extension RepsWorkoutViewController {
@@ -148,11 +139,5 @@ extension RepsWorkoutViewController {
             finishButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             finishButton.heightAnchor.constraint(equalToConstant: 60)
         ])
-        
-        
     }
-    
-    
-    
-    
 }
