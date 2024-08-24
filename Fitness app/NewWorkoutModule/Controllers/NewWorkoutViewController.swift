@@ -11,7 +11,6 @@ import RealmSwift
 final class NewWorkoutViewController: UIViewController {
     
     //MARK: - UI
-    
     private let newWorkoutLabel = UILabel(
         text: "NEW WORKOUT",
         font: .robotoBold24(),
@@ -40,7 +39,6 @@ final class NewWorkoutViewController: UIViewController {
         
         saveButton.addTarget(self, action: #selector(saveButtonPressed), for: .touchUpInside)
         closeButton.addTarget(self, action: #selector(closeButtonPressed), for: .touchUpInside)
-        
     }
     
     //MARK: - Actions

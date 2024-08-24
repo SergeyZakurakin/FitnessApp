@@ -175,11 +175,7 @@ extension MainViewController: WorkoutCellProtocol {
             present(timerWorkoutVC, animated: true)
         }
     }
-    
-    
 }
-
-
 
 //MARK: - CalendarViewProtocol
 extension MainViewController: CalendarViewProtocol {
@@ -201,8 +197,6 @@ extension MainViewController: MainTableViewProtocol {
         workoutTableView.setWorkoutArray(array: workoutArray)
         workoutTableView.reloadData()
     }
-    
-    
 }
 
 //MARK: - Setup Constraints

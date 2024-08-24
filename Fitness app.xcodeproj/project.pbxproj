@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC4DCF162C7938170017BA8C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DCF152C7938170017BA8C /* ProfileViewController.swift */; };
+		DC4DCF182C7A60F90017BA8C /* ProfileCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DCF172C7A60F90017BA8C /* ProfileCollectionView.swift */; };
+		DC4DCF1B2C7A69C40017BA8C /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DCF1A2C7A69C40017BA8C /* ProfileCollectionViewCell.swift */; };
 		DC9E90932C6190840053D2A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90922C6190840053D2A0 /* AppDelegate.swift */; };
 		DC9E90952C6190840053D2A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90942C6190840053D2A0 /* SceneDelegate.swift */; };
 		DC9E90972C6190840053D2A0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90962C6190840053D2A0 /* MainViewController.swift */; };
@@ -71,6 +74,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DC4DCF152C7938170017BA8C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		DC4DCF172C7A60F90017BA8C /* ProfileCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionView.swift; sourceTree = "<group>"; };
+		DC4DCF1A2C7A69C40017BA8C /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		DC9E908F2C6190840053D2A0 /* Fitness app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitness app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC9E90922C6190840053D2A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC9E90942C6190840053D2A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +138,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC4DCF122C7937A00017BA8C /* ProfileModule */ = {
+			isa = PBXGroup;
+			children = (
+				DC4DCF142C7937CC0017BA8C /* Views */,
+				DC4DCF132C7937C00017BA8C /* Controllers */,
+			);
+			path = ProfileModule;
+			sourceTree = "<group>";
+		};
+		DC4DCF132C7937C00017BA8C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DC4DCF152C7938170017BA8C /* ProfileViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DC4DCF142C7937CC0017BA8C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DC4DCF192C7A68520017BA8C /* Cells */,
+				DC4DCF172C7A60F90017BA8C /* ProfileCollectionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DC4DCF192C7A68520017BA8C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DC4DCF1A2C7A69C40017BA8C /* ProfileCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		DC9E90862C6190840053D2A0 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +199,7 @@
 				DC9E90D82C6516740053D2A0 /* NewWorkoutModule */,
 				DC9E91342C6861110053D2A0 /* RepsWorkoutModule */,
 				DC9E916D2C7515830053D2A0 /* TimerWorkoutModule */,
+				DC4DCF122C7937A00017BA8C /* ProfileModule */,
 				DC9E91312C6831E80053D2A0 /* Services */,
 				DC9E90AF2C6302A60053D2A0 /* Extensions */,
 				DC9E90A92C6192840053D2A0 /* SuportingFiles */,
@@ -534,10 +575,12 @@
 				DC9E91632C6AE5DC0053D2A0 /* UIViewController + Extensions.swift in Sources */,
 				DC9E91222C66F8B80053D2A0 /* SliderTypes.swift in Sources */,
 				DC9E916A2C6E67290053D2A0 /* DifferenceWorkout.swift in Sources */,
+				DC4DCF1B2C7A69C40017BA8C /* ProfileCollectionViewCell.swift in Sources */,
 				DC9E91752C7578FB0053D2A0 /* BrownTextField.swift in Sources */,
 				DC9E90D72C65105D0053D2A0 /* MainTabBarController.swift in Sources */,
 				DC9E90BF2C63A7400053D2A0 /* CalendarCollectionView.swift in Sources */,
 				DC9E90CF2C6445050053D2A0 /* StatisticViewController.swift in Sources */,
+				DC4DCF162C7938170017BA8C /* ProfileViewController.swift in Sources */,
 				DC9E90C42C63E8E30053D2A0 /* UILabel + Extensions.swift in Sources */,
 				DC9E913A2C6862760053D2A0 /* CloseButton.swift in Sources */,
 				DC9E90972C6190840053D2A0 /* MainViewController.swift in Sources */,
@@ -558,6 +601,7 @@
 				DC9E90952C6190840053D2A0 /* SceneDelegate.swift in Sources */,
 				DC9E90D42C644EAD0053D2A0 /* StatisticTableViewCell.swift in Sources */,
 				DC9E90DE2C65261A0053D2A0 /* NameView.swift in Sources */,
+				DC4DCF182C7A60F90017BA8C /* ProfileCollectionView.swift in Sources */,
 				DC9E91712C7516730053D2A0 /* TimerWorkoutViewController.swift in Sources */,
 				DC9E90D12C644CE20053D2A0 /* StatisticTableView.swift in Sources */,
 				DC9E90C82C63F3250053D2A0 /* StackView + Extensions.swift in Sources */,

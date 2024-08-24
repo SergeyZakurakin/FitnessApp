@@ -30,7 +30,7 @@ class CalendarCollectionView: UICollectionView {
         configure()
         setDelegates()
         
-        // рергистрация ячейки CalendarCollectionViewCell
+        // Cell registration CalendarCollectionViewCell
         register(CalendarCollectionViewCell.self, forCellWithReuseIdentifier: idCalendarCell)
     }
     
