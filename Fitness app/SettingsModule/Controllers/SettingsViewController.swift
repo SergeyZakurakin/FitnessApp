@@ -38,6 +38,7 @@ class SettingsViewController: UIViewController {
         element.layer.borderWidth = 5
         element.image = UIImage(named: "profileTabBar")?.withRenderingMode(.alwaysTemplate)
         element.tintColor = .white
+        element.clipsToBounds = true
         element.contentMode = .center
         
         element.translatesAutoresizingMaskIntoConstraints = false
@@ -68,6 +69,9 @@ class SettingsViewController: UIViewController {
     
     private lazy var saveButton = UIButton(text: "SAVE")
     
+    private var userModel = UserModel()
+//    private var userArray: [UserModel] = []
+    
     //MARK: - Life Cycle
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -79,6 +83,8 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         setupViews()
         setupConstraints()
+        addTaps()
+        loadUserInfo()
     }
     
     
@@ -148,7 +154,74 @@ class SettingsViewController: UIViewController {
     
     
     @objc private func saveButtonPressed() {
-        print("save")
+        setUserModel()
+        
+        let userArray = RealmManager.shared.getResultUserModel()
+        
+        // save if isEmpty, update if not empty
+        if userArray.count == 0 {
+            RealmManager.shared.saveUserModel(userModel)
+        } else {
+            RealmManager.shared.updateUserModel(model: userModel)
+        }
+        
+        // update model
+        userModel = UserModel()
+    }
+    
+    // turn on tap on imageView
+    private func addTaps() {
+        let tapImageView = UITapGestureRecognizer(target: self, action: #selector(setUserPhoto))
+        userImageView.isUserInteractionEnabled = true
+        userImageView.addGestureRecognizer(tapImageView)
+    }
+    
+    @objc private func setUserPhoto() {
+        print("TapImage")
+    }
+    
+    private func setUserModel() {
+        guard let firstName = firstNameTextfield.text,
+              let secondName = secondNameTextfield.text,
+              let height = heightNameTextfield.text,
+              let weight = heightNameTextfield.text,
+              let target = targetNameTextfield.text else { return }
+        
+        guard let intHeight = Int(height),
+              let intWeight = Int(weight),
+              let intTarget = Int(target) else { return }
+        
+        userModel.userFirstName = firstName
+        userModel.userSecondName = secondName
+        userModel.userHeight = intHeight
+        userModel.userWeight = intWeight
+        userModel.userTarget = intTarget
+        
+        if userImageView.image == UIImage(named: "profileTabBar") {
+            userModel.userImage = nil
+        } else {
+            guard let imageData = userImageView.image?.pngData() else { return }
+            userModel.userImage = imageData
+        }
+    }
+    
+    private func loadUserInfo() {
+        let userArray = RealmManager.shared.getResultUserModel()
+        
+        if userArray.count != 0 {
+            firstNameTextfield.text = userArray[0].userFirstName
+            secondNameTextfield.text = userArray[0].userSecondName
+            heightNameTextfield.text = "\(userArray[0].userHeight)"
+            weightNameTextfield.text = "\(userArray[0].userWeight)"
+            targetNameTextfield.text = "\(userArray[0].userTarget)"
+            
+            guard let data = userArray[0].userImage,
+                  let image = UIImage(data: data) else { return }
+            
+            userImageView.image = image
+            userImageView.contentMode = .scaleAspectFit
+        }
+        
     }
     
 }
@@ -184,11 +257,6 @@ extension SettingsViewController {
             saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
             saveButton.heightAnchor.constraint(equalToConstant: 54)
 
-
-        
-        
-        
-        
         ])
     }
 }

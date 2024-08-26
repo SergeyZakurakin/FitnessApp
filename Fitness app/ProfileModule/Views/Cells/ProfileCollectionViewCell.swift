@@ -71,14 +71,14 @@ extension ProfileCollectionViewCell {
         NSLayoutConstraint.activate([
         
             mainLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            mainLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            mainLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
             
             imageView.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: 5),
             imageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
             imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             
             numberLabel.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: 10),
-            numberLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
+            numberLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
             numberLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
         ])
     }
