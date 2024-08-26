@@ -22,7 +22,8 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     
     private let imageView: UIImageView = {
         let element = UIImageView()
-        element.image = UIImage(named: "imageCell")
+        element.image = UIImage(named: "imageCell")?.withRenderingMode(.alwaysTemplate) // to change color
+        element.tintColor = .white
         element.contentMode = .scaleAspectFit
         
         element.translatesAutoresizingMaskIntoConstraints = false
@@ -56,7 +57,7 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     
     
     private func setupView() {
-        backgroundColor = .specialGreen
+//        backgroundColor = .specialGreen
         layer.cornerRadius = 10
         addSubview(mainLabel)
         addSubview(imageView)

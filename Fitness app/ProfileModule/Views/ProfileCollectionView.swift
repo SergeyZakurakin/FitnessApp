@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol ProfileCollectionViewDelegate: AnyObject {
+    func didSelectItem(increment: Float)
+}
+
 class ProfileCollectionView: UICollectionView {
     
     private let collectionLayout = UICollectionViewFlowLayout()
+    
+    weak var profileDelegate: ProfileCollectionViewDelegate?
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: .zero, collectionViewLayout: collectionLayout)
@@ -50,6 +56,12 @@ extension ProfileCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? ProfileCollectionViewCell else { return UICollectionViewCell() }
         
+        if indexPath.item % 3 == 0 /*|| indexPath.item % 2 == 1 */{
+            cell.backgroundColor = .specialYellow
+        } else {
+            cell.backgroundColor = .specialGreen
+        }
+        
         return cell
     }
 }
@@ -58,5 +70,10 @@ extension ProfileCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: 176, height: 100)  //CGSize(width: 176, height: 100)
 
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        profileDelegate?.didSelectItem(increment: 0.1)
+        print(indexPath.item)
     }
 }

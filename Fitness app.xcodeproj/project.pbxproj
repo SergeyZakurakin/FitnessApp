@@ -10,6 +10,7 @@
 		DC4DCF162C7938170017BA8C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DCF152C7938170017BA8C /* ProfileViewController.swift */; };
 		DC4DCF182C7A60F90017BA8C /* ProfileCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DCF172C7A60F90017BA8C /* ProfileCollectionView.swift */; };
 		DC4DCF1B2C7A69C40017BA8C /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DCF1A2C7A69C40017BA8C /* ProfileCollectionViewCell.swift */; };
+		DC4DCF1F2C7BFE880017BA8C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DCF1E2C7BFE880017BA8C /* SettingsViewController.swift */; };
 		DC9E90932C6190840053D2A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90922C6190840053D2A0 /* AppDelegate.swift */; };
 		DC9E90952C6190840053D2A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90942C6190840053D2A0 /* SceneDelegate.swift */; };
 		DC9E90972C6190840053D2A0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90962C6190840053D2A0 /* MainViewController.swift */; };
@@ -77,6 +78,7 @@
 		DC4DCF152C7938170017BA8C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DC4DCF172C7A60F90017BA8C /* ProfileCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionView.swift; sourceTree = "<group>"; };
 		DC4DCF1A2C7A69C40017BA8C /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		DC4DCF1E2C7BFE880017BA8C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DC9E908F2C6190840053D2A0 /* Fitness app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitness app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC9E90922C6190840053D2A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC9E90942C6190840053D2A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +174,22 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		DC4DCF1C2C7BFE590017BA8C /* SettingsModule */ = {
+			isa = PBXGroup;
+			children = (
+				DC4DCF1D2C7BFE720017BA8C /* Controllers */,
+			);
+			path = SettingsModule;
+			sourceTree = "<group>";
+		};
+		DC4DCF1D2C7BFE720017BA8C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DC4DCF1E2C7BFE880017BA8C /* SettingsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		DC9E90862C6190840053D2A0 = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +218,7 @@
 				DC9E91342C6861110053D2A0 /* RepsWorkoutModule */,
 				DC9E916D2C7515830053D2A0 /* TimerWorkoutModule */,
 				DC4DCF122C7937A00017BA8C /* ProfileModule */,
+				DC4DCF1C2C7BFE590017BA8C /* SettingsModule */,
 				DC9E91312C6831E80053D2A0 /* Services */,
 				DC9E90AF2C6302A60053D2A0 /* Extensions */,
 				DC9E90A92C6192840053D2A0 /* SuportingFiles */,
@@ -569,6 +588,7 @@
 				DC9E911D2C665DFC0053D2A0 /* UISlider + Extensions.swift in Sources */,
 				DC9E90E42C65A7020053D2A0 /* UIButton + Extensions.swift in Sources */,
 				DC9E912B2C6705930053D2A0 /* GreenSlider.swift in Sources */,
+				DC4DCF1F2C7BFE880017BA8C /* SettingsViewController.swift in Sources */,
 				DC9E912E2C67D1EB0053D2A0 /* WorkOutModel.swift in Sources */,
 				DC9E90BD2C6307CA0053D2A0 /* UIColor + Extensions.swift in Sources */,
 				DC9E90E22C6535730053D2A0 /* RepsOrTimerView.swift in Sources */,

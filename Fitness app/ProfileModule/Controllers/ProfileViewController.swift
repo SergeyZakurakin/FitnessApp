@@ -54,13 +54,14 @@ class ProfileViewController: UIViewController {
     private let weightLabel = UILabel(text: "weight: 77")
     
     private var heightWeightEditingStackView = UIStackView()
+    
     private lazy var editingButton: UIButton = {
         let element = UIButton(type: .system)
         element.semanticContentAttribute = .forceRightToLeft
         element.setTitle("editing ", for: .normal)
         
         element.setImage(UIImage(named: "MoreCircle"), for: .normal)
-        element.tintColor = .specialGray
+        element.tintColor = .specialGreen
         
 //        element.addTarget(self, action: #selector(editingButtonPressed), for: .touchUpInside)
         element.translatesAutoresizingMaskIntoConstraints = false
@@ -75,16 +76,19 @@ class ProfileViewController: UIViewController {
     private let minNumberLabel = UILabel(text: "2", font: .robotoBold24(), textColor: .specialBlack)
     private let maxNumberLabel = UILabel(text: "20", font: .robotoBold24(), textColor: .specialBlack)
     
-    private let numberSlider: UISlider = {
-       let element = UISlider()
-        element.minimumValue = 1
-        element.maximumValue = 20
-        element.value = 2
-        element.minimumTrackTintColor = .specialGreen
+    private let numberProgressView: UIProgressView = {
+       let element = UIProgressView()
+        element.setProgress(0.0, animated: true)
+        element.trackTintColor = .specialLightBrown
+        element.progressTintColor = .specialGreen
+        // надо скруглить
         
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
     }()
+    
+    
+    private var currentProgress: Float = 0.0
 
     //MARK: - Life Cycle
     override func viewDidLayoutSubviews() {
@@ -115,6 +119,7 @@ class ProfileViewController: UIViewController {
             axis: .horizontal,
             spacing: 10
         )
+        editingButton.addTarget(self, action: #selector(editingButtonPressed), for: .touchUpInside)
         
         view.addSubview(heightWeightEditingStackView)
         view.addSubview(profileCollectionView)
@@ -127,7 +132,25 @@ class ProfileViewController: UIViewController {
         )
         
         view.addSubview(minMaxNumberStackView)
-        view.addSubview(numberSlider)
+        view.addSubview(numberProgressView)
+        
+        profileCollectionView.profileDelegate = self
+    }
+    
+    @objc private func editingButtonPressed() {
+        let settingsVC = SettingsViewController()
+        settingsVC.modalPresentationStyle = .fullScreen
+        present(settingsVC, animated: true)
+    }
+    
+}
+
+extension ProfileViewController: ProfileCollectionViewDelegate {
+    func didSelectItem(increment: Float) {
+        if currentProgress < 1.0 {
+            currentProgress += increment
+            numberProgressView.setProgress(currentProgress, animated: true)
+        }
     }
 }
 
@@ -171,9 +194,10 @@ extension ProfileViewController {
             minMaxNumberStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             minMaxNumberStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             
-            numberSlider.topAnchor.constraint(equalTo: minMaxNumberStackView.bottomAnchor, constant: 10),
-            numberSlider.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            numberSlider.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            numberProgressView.topAnchor.constraint(equalTo: minMaxNumberStackView.bottomAnchor, constant: 10),
+            numberProgressView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            numberProgressView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            numberProgressView.heightAnchor.constraint(equalToConstant: 20)
         ])
     }
 }
