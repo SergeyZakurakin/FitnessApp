@@ -99,6 +99,12 @@ final class MainViewController: UIViewController {
         setupUserParameters()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        showOnBoarding()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -198,6 +204,16 @@ final class MainViewController: UIViewController {
             }
         }
     
+    }
+    
+    private func showOnBoarding() {
+        let userDefaults = UserDefaults.standard
+        let OnBoardingWasViewed = userDefaults.bool(forKey: "OnBoardingWasViewed")
+        if OnBoardingWasViewed == false {
+            let onBoardingVC = OnBoardingViewController()
+            onBoardingVC.modalPresentationStyle = .fullScreen
+            present(onBoardingVC, animated: true)
+        }
     }
     
 }

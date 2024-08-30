@@ -19,6 +19,7 @@
 		DC4DCF2D2C8234300017BA8C /* NetworkDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DCF2C2C8234300017BA8C /* NetworkDataFetch.swift */; };
 		DC4DCF2F2C8241F10017BA8C /* NetworkImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DCF2E2C8241F10017BA8C /* NetworkImageRequest.swift */; };
 		DC4DCF342C824DF80017BA8C /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DCF332C824DF80017BA8C /* OnBoardingViewController.swift */; };
+		DC4DCF392C825FCC0017BA8C /* OnBoardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DCF382C825FCC0017BA8C /* OnBoardingCollectionViewCell.swift */; };
 		DC9E90932C6190840053D2A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90922C6190840053D2A0 /* AppDelegate.swift */; };
 		DC9E90952C6190840053D2A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90942C6190840053D2A0 /* SceneDelegate.swift */; };
 		DC9E90972C6190840053D2A0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90962C6190840053D2A0 /* MainViewController.swift */; };
@@ -95,6 +96,7 @@
 		DC4DCF2C2C8234300017BA8C /* NetworkDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetch.swift; sourceTree = "<group>"; };
 		DC4DCF2E2C8241F10017BA8C /* NetworkImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImageRequest.swift; sourceTree = "<group>"; };
 		DC4DCF332C824DF80017BA8C /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		DC4DCF382C825FCC0017BA8C /* OnBoardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		DC9E908F2C6190840053D2A0 /* Fitness app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitness app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC9E90922C6190840053D2A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC9E90942C6190840053D2A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 		DC4DCF322C824DD10017BA8C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DC4DCF382C825FCC0017BA8C /* OnBoardingCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -671,6 +674,7 @@
 				DC4DCF2B2C822F8F0017BA8C /* NetworkRequest.swift in Sources */,
 				DC4DCF262C81379B0017BA8C /* Notifications.swift in Sources */,
 				DC9E90972C6190840053D2A0 /* MainViewController.swift in Sources */,
+				DC4DCF392C825FCC0017BA8C /* OnBoardingCollectionViewCell.swift in Sources */,
 				DC9E913E2C6A94440053D2A0 /* SeparatorView.swift in Sources */,
 				DC9E90CA2C640BBA0053D2A0 /* WorkoutTableViewCell.swift in Sources */,
 				DC9E911F2C66F2120053D2A0 /* Int + Extensions.swift in Sources */,
