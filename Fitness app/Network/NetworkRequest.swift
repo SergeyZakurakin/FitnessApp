@@ -15,8 +15,8 @@ class NetworkRequest {
     
     func requestData(completion: @escaping (Result<Data, Error>) -> Void) {
         let apiKey = "5b3bb97e5140759a26defd7ebacaf558"
-        let latitude = 48.1783
-        let longitude = 23.2983
+        let latitude = 25.7907
+        let longitude = -80.1300
         let urlString = "https://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=\(apiKey)"
         
         guard let url = URL(string: urlString) else { return }
