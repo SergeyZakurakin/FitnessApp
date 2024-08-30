@@ -40,8 +40,6 @@ class ProfileCollectionViewCell: UICollectionViewCell {
         return element
     }()
     
-    
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -64,6 +62,14 @@ class ProfileCollectionViewCell: UICollectionViewCell {
         addSubview(numberLabel)
     }
     
+    public func configure(model: ResultWorkout) {
+        mainLabel.text = model.name
+        numberLabel.text = "\(model.result)"
+        
+        guard let data = model.imageData else { return }
+        imageView.image = UIImage(data: data)?.withRenderingMode(.alwaysTemplate)
+    }
+    
 }
 
 extension ProfileCollectionViewCell {
@@ -76,6 +82,7 @@ extension ProfileCollectionViewCell {
             imageView.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: 5),
             imageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
             imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            imageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100),
             
             numberLabel.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: 10),
             numberLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),

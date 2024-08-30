@@ -34,6 +34,9 @@ class ProfileViewController: UIViewController {
         element.backgroundColor = #colorLiteral(red: 0.8044065833, green: 0.8044064641, blue: 0.8044064641, alpha: 1)  // #colorLiteral() (note)
         element.layer.borderColor = UIColor.white.cgColor
         element.layer.borderWidth = 5
+        element.contentMode = .scaleAspectFill
+        element.clipsToBounds = true
+//        element.contentMode = .center
         
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
@@ -81,20 +84,32 @@ class ProfileViewController: UIViewController {
         element.setProgress(0.0, animated: true)
         element.trackTintColor = .specialLightBrown
         element.progressTintColor = .specialGreen
-        // надо скруглить
         
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
     }()
     
+    var resultWorkout: [ResultWorkout] = []
     
     private var currentProgress: Float = 0.0
+    
 
     //MARK: - Life Cycle
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         userImageView.layer.cornerRadius = userImageView.frame.width / 2
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        resultWorkout = [ResultWorkout]()
+        getWorkoutsResults()
+        profileCollectionView.setResultsWorkoutArray(array: resultWorkout)
+        profileCollectionView.reloadData()
+        setupUserParameters()
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -141,6 +156,54 @@ class ProfileViewController: UIViewController {
         let settingsVC = SettingsViewController()
         settingsVC.modalPresentationStyle = .fullScreen
         present(settingsVC, animated: true)
+    }
+    
+    private func getWorkoutsName() -> [String] {
+        var nameArray: [String] = []
+        let allWorkouts = RealmManager.shared.getResultWorkoutModel()
+        
+        for workoutModel in allWorkouts {
+            if !nameArray.contains(workoutModel.workOutName) {
+                nameArray.append(workoutModel.workOutName)
+            }
+        }
+        return nameArray
+    }
+    
+    private func getWorkoutsResults() {
+        let nameArray = getWorkoutsName()
+        let workoutArray = RealmManager.shared.getResultWorkoutModel()
+        
+        for name in nameArray {
+            let predicate = NSPredicate(format: "workOutName = '\(name)'")
+            let filteredArray = workoutArray.filter(predicate).sorted(byKeyPath: "workOutName")
+            var result = 0
+            var image: Data?
+            filteredArray.forEach { model in
+                result += model.workOutReps * model.workOutSets
+                image = model.workOutImage
+            }
+            let resultsModel = ResultWorkout(name: name, result: result, imageData: image)
+            resultWorkout.append(resultsModel)
+        }
+    }
+    
+    private func setupUserParameters() {
+        
+        let userArray = RealmManager.shared.getResultUserModel()
+        
+        if userArray.count != 0 {
+            profileNameLabel.text = userArray[0].userFirstName + " " + userArray[0].userSecondName
+            heightLabel.text = "Height: \(userArray[0].userHeight)"
+            weightLabel.text = "Weight: \(userArray[0].userWeight)"
+            targetLabel.text = "TARGET: \(userArray[0].userTarget)"
+            maxNumberLabel.text = "\(userArray[0].userTarget)"
+            
+            guard let data = userArray[0].userImage,
+                  let image = UIImage(data: data) else { return }
+            userImageView.image = image
+            
+        }
     }
     
 }

@@ -12,6 +12,8 @@
 		DC4DCF1B2C7A69C40017BA8C /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DCF1A2C7A69C40017BA8C /* ProfileCollectionViewCell.swift */; };
 		DC4DCF1F2C7BFE880017BA8C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DCF1E2C7BFE880017BA8C /* SettingsViewController.swift */; };
 		DC4DCF212C7D2D310017BA8C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DCF202C7D2D310017BA8C /* UserModel.swift */; };
+		DC4DCF242C7D4A1C0017BA8C /* ResultWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DCF232C7D4A1C0017BA8C /* ResultWorkout.swift */; };
+		DC4DCF262C81379B0017BA8C /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DCF252C81379B0017BA8C /* Notifications.swift */; };
 		DC9E90932C6190840053D2A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90922C6190840053D2A0 /* AppDelegate.swift */; };
 		DC9E90952C6190840053D2A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90942C6190840053D2A0 /* SceneDelegate.swift */; };
 		DC9E90972C6190840053D2A0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90962C6190840053D2A0 /* MainViewController.swift */; };
@@ -81,6 +83,8 @@
 		DC4DCF1A2C7A69C40017BA8C /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		DC4DCF1E2C7BFE880017BA8C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		DC4DCF202C7D2D310017BA8C /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		DC4DCF232C7D4A1C0017BA8C /* ResultWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultWorkout.swift; sourceTree = "<group>"; };
+		DC4DCF252C81379B0017BA8C /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		DC9E908F2C6190840053D2A0 /* Fitness app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitness app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC9E90922C6190840053D2A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC9E90942C6190840053D2A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 		DC4DCF122C7937A00017BA8C /* ProfileModule */ = {
 			isa = PBXGroup;
 			children = (
+				DC4DCF222C7D4A020017BA8C /* Model */,
 				DC4DCF142C7937CC0017BA8C /* Views */,
 				DC4DCF132C7937C00017BA8C /* Controllers */,
 			);
@@ -190,6 +195,14 @@
 				DC4DCF1E2C7BFE880017BA8C /* SettingsViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DC4DCF222C7D4A020017BA8C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DC4DCF232C7D4A1C0017BA8C /* ResultWorkout.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		DC9E90862C6190840053D2A0 = {
@@ -274,6 +287,7 @@
 			children = (
 				DC9E90922C6190840053D2A0 /* AppDelegate.swift */,
 				DC9E90942C6190840053D2A0 /* SceneDelegate.swift */,
+				DC4DCF252C81379B0017BA8C /* Notifications.swift */,
 			);
 			path = Aplication;
 			sourceTree = "<group>";
@@ -607,6 +621,7 @@
 				DC4DCF162C7938170017BA8C /* ProfileViewController.swift in Sources */,
 				DC9E90C42C63E8E30053D2A0 /* UILabel + Extensions.swift in Sources */,
 				DC9E913A2C6862760053D2A0 /* CloseButton.swift in Sources */,
+				DC4DCF262C81379B0017BA8C /* Notifications.swift in Sources */,
 				DC9E90972C6190840053D2A0 /* MainViewController.swift in Sources */,
 				DC9E913E2C6A94440053D2A0 /* SeparatorView.swift in Sources */,
 				DC9E90CA2C640BBA0053D2A0 /* WorkoutTableViewCell.swift in Sources */,
@@ -624,6 +639,7 @@
 				DC9E91332C6832110053D2A0 /* RealmManager.swift in Sources */,
 				DC9E90952C6190840053D2A0 /* SceneDelegate.swift in Sources */,
 				DC9E90D42C644EAD0053D2A0 /* StatisticTableViewCell.swift in Sources */,
+				DC4DCF242C7D4A1C0017BA8C /* ResultWorkout.swift in Sources */,
 				DC9E90DE2C65261A0053D2A0 /* NameView.swift in Sources */,
 				DC4DCF182C7A60F90017BA8C /* ProfileCollectionView.swift in Sources */,
 				DC9E91712C7516730053D2A0 /* TimerWorkoutViewController.swift in Sources */,

@@ -7,6 +7,7 @@
 
 import UIKit
 
+//MARK: - Alert Controller
 extension UIViewController {
     
     func presentSimpleAlert(title: String, message: String?) {
@@ -22,6 +23,7 @@ extension UIViewController {
     }
     
     func presentAlertWithActions(title: String, message: String?, completionHandler: @escaping () -> Void) {
+        
         let alertController = UIAlertController(
             title: title,
             message: message,
@@ -37,6 +39,33 @@ extension UIViewController {
         
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
+        present(alertController, animated: true)
+    }
+    
+    func alertPhotoOrCamera(completionHandler: @escaping(UIImagePickerController.SourceType) -> Void) {
+        
+        let alertController = UIAlertController(
+            title: nil,
+            message: nil,
+            preferredStyle: .actionSheet
+        )
+        
+        let camera = UIAlertAction(title: "Camera", style: .default) { _ in
+            let camera = UIImagePickerController.SourceType.camera
+            completionHandler(camera)
+        }
+        
+        
+        let photoGallery = UIAlertAction(title: "photo Library", style: .default) { _ in
+            let photoLibrary = UIImagePickerController.SourceType.photoLibrary
+            completionHandler(photoLibrary)
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alertController.addAction(camera)
+        alertController.addAction(photoGallery)
+        alertController.addAction(cancel)
         present(alertController, animated: true)
     }
 }

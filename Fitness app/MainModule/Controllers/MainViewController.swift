@@ -15,6 +15,8 @@ final class MainViewController: UIViewController {
         element.backgroundColor = #colorLiteral(red: 0.8044065833, green: 0.8044064641, blue: 0.8044064641, alpha: 1)  // #colorLiteral() (note)
         element.layer.borderColor = UIColor.white.cgColor
         element.layer.borderWidth = 5
+        element.clipsToBounds = true
+        element.contentMode = .scaleAspectFill
         
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
@@ -94,6 +96,7 @@ final class MainViewController: UIViewController {
         super.viewWillAppear(animated)
         
         selectItem(date: Date())
+        setupUserParameters()
     }
     
     override func viewDidLoad() {
@@ -155,6 +158,24 @@ final class MainViewController: UIViewController {
         } else {
             noWorkoutImageView.isHidden = true
             workoutTableView.isHidden = false
+        }
+    }
+    
+    private func setupUserParameters() {
+        
+        let userArray = RealmManager.shared.getResultUserModel()
+        
+        if userArray.count != 0 {
+            userNameLabel.text = userArray[0].userFirstName + " " + userArray[0].userSecondName
+//            heightLabel.text = "Height: \(userArray[0].userHeight)"
+//            weightLabel.text = "Weight: \(userArray[0].userWeight)"
+//            targetLabel.text = "TARGET: \(userArray[0].userTarget)"
+//            maxNumberLabel.text = "\(userArray[0].userTarget)"
+            
+            guard let data = userArray[0].userImage,
+                  let image = UIImage(data: data) else { return }
+            userImageImageView.image = image
+            
         }
     }
 }

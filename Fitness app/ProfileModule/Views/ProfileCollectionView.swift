@@ -13,6 +13,7 @@ protocol ProfileCollectionViewDelegate: AnyObject {
 
 class ProfileCollectionView: UICollectionView {
     
+    
     private let collectionLayout = UICollectionViewFlowLayout()
     
     weak var profileDelegate: ProfileCollectionViewDelegate?
@@ -44,23 +45,38 @@ class ProfileCollectionView: UICollectionView {
         dataSource = self
         delegate = self
     }
+    
+    private var resultWorkOut: [ResultWorkout] = []
+    
+    //MARK: - Public Methods
+    public func setResultsWorkoutArray(array: [ResultWorkout]) {
+        resultWorkOut = array
+    }
 }
 
 //MARK: - UICollectionViewDataSource
 extension ProfileCollectionView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        70
+        resultWorkOut.count
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? ProfileCollectionViewCell else { return UICollectionViewCell() }
         
-        if indexPath.item % 3 == 0 /*|| indexPath.item % 2 == 1 */{
+        let model = resultWorkOut[indexPath.item]
+        cell.configure(model: model)
+        
+        
+//        cell.backgroundColor = indexPath.item % 4 == 0 || indexPath.item % 4 == 3 ? .specialYellow : .specialGreen
+        if indexPath.item % 4 == 0 || indexPath.item % 4 == 3 {
             cell.backgroundColor = .specialYellow
         } else {
             cell.backgroundColor = .specialGreen
         }
+        
+        
         
         return cell
     }

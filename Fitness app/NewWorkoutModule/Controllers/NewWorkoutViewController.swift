@@ -122,6 +122,12 @@ final class NewWorkoutViewController: UIViewController {
         view.addSubview(repsOrTimerView)
         view.addSubview(saveButton)
     }
+    
+    private func createNotification() {
+        let notification = Notifications()
+        let stringDate = workOutModel.workOutDate.ddmmYYFromDate()
+        notification.scheduleDateNotification(date: workOutModel.workOutDate, id: "workout" + stringDate)
+    }
 }
 
 //MARK: - Setup Constraints

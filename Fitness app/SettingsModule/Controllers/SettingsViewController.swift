@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PhotosUI
 
 class SettingsViewController: UIViewController {
     
@@ -167,6 +168,7 @@ class SettingsViewController: UIViewController {
         
         // update model
         userModel = UserModel()
+        dismiss(animated: true)
     }
     
     // turn on tap on imageView
@@ -177,7 +179,13 @@ class SettingsViewController: UIViewController {
     }
     
     @objc private func setUserPhoto() {
-        print("TapImage")
+        alertPhotoOrCamera { [weak self] source in
+            guard let self else { return }
+            
+            presentPHPicker()
+            
+//            chooseImagePicker(source: source)
+        }
     }
     
     private func setUserModel() {
@@ -200,8 +208,11 @@ class SettingsViewController: UIViewController {
         if userImageView.image == UIImage(named: "profileTabBar") {
             userModel.userImage = nil
         } else {
-            guard let imageData = userImageView.image?.pngData() else { return }
-            userModel.userImage = imageData
+//            guard let imageData = userImageView.image?.pngData() else { return }
+//            userModel.userImage = imageData
+            guard let image = userImageView.image else { return }
+            let jpegData = image.jpegData(compressionQuality: 1.0)
+            userModel.userImage = jpegData
         }
     }
     
@@ -219,13 +230,67 @@ class SettingsViewController: UIViewController {
                   let image = UIImage(data: data) else { return }
             
             userImageView.image = image
-            userImageView.contentMode = .scaleAspectFit
+            userImageView.contentMode = .scaleAspectFill
         }
         
     }
     
 }
 
+//MARK: - UIPickerViewDelegate, UINavigationControllerDelegate
+// get access to the phone gallery
+//extension SettingsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+//    
+//    private func chooseImagePicker(source: UIImagePickerController.SourceType) {
+//        // checking access
+//        if UIImagePickerController.isSourceTypeAvailable(source) {
+//            let imagePicker = UIImagePickerController()
+//            imagePicker.delegate = self
+//            // open edditing
+//            imagePicker.allowsEditing = true
+//            imagePicker.sourceType = source
+//            present(imagePicker, animated: true)
+//            
+//        }
+//    }
+//    
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//        let image = info[.editedImage] as? UIImage
+//        userImageView.image = image
+//        userImageView.contentMode = .scaleAspectFit
+//        dismiss(animated: true)
+//    }
+//   
+//}
+//MARK: - PHPickerViewControllerDelegate
+extension SettingsViewController: PHPickerViewControllerDelegate {
+    
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        picker.dismiss(animated: true)
+        results.forEach { result in
+            result.itemProvider.loadObject(ofClass: UIImage.self) { reading, error in
+                guard let image = reading as? UIImage, error == nil else { return }
+                
+                DispatchQueue.main.async {
+                    self.userImageView.image = image
+                    self.userImageView.contentMode = .scaleAspectFit
+                }
+                
+            }
+        }
+    }
+    
+    private func presentPHPicker() {
+        var phPickerConfigure = PHPickerConfiguration(photoLibrary: .shared())
+        phPickerConfigure.selectionLimit = 1
+        phPickerConfigure.filter = PHPickerFilter.any(of: [.images])
+        
+        let phPickerVC = PHPickerViewController(configuration: phPickerConfigure)
+        phPickerVC.delegate = self
+        present(phPickerVC, animated: true)
+    }
+    
+}
 
 //MARK: - Setup Constraints
 extension SettingsViewController {
