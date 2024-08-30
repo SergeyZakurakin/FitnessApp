@@ -105,6 +105,7 @@ final class MainViewController: UIViewController {
         setupViews()
         setupConstraints()
         selectItem(date: Date())
+        getWeather()
         
     }
 
@@ -178,6 +179,27 @@ final class MainViewController: UIViewController {
             
         }
     }
+    
+    // get weather
+    private func getWeather() {
+        NetworkDataFetch.shared.fetchWeather { [weak self] result, error in
+            guard let self else { return }
+            if let model = result {
+                weatherView.updateLabels(model: model)
+                
+                NetworkImageRequest.shared.requestData(id: model.weather[0].icon) { result in
+                    switch result {
+                    case .success(let data):
+                        self.weatherView.updateImage(data: data)
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+            }
+        }
+    
+    }
+    
 }
 
 //MARK: - WorkoutCellProtocol

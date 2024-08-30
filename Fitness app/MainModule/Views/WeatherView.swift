@@ -66,6 +66,25 @@ final class WeatherView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
     }
     
+    // update Image from data
+    public func updateImage(data: Data) {
+        guard let image = UIImage(data: data) else { return }
+        weatherImageView.image = image
+    }
+    
+    // update label from data
+    public func updateLabels(model: WeatherModel) {
+        titleLabel.text = model.name + " - " + "\(model.main.temp)°F"
+        
+        switch model.weather[0].weatherDescription {
+        case "shower snow":
+            descriptionLabel.text = "Today is snow, better stay at home"
+        default:
+            descriptionLabel.text = "good weather for the traning"
+        }
+ 
+        }
+    
 }
 
 //MARK: - Setup Constraints

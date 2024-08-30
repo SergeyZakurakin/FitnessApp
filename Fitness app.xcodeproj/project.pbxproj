@@ -14,6 +14,11 @@
 		DC4DCF212C7D2D310017BA8C /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DCF202C7D2D310017BA8C /* UserModel.swift */; };
 		DC4DCF242C7D4A1C0017BA8C /* ResultWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DCF232C7D4A1C0017BA8C /* ResultWorkout.swift */; };
 		DC4DCF262C81379B0017BA8C /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DCF252C81379B0017BA8C /* Notifications.swift */; };
+		DC4DCF282C822B5A0017BA8C /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DCF272C822B5A0017BA8C /* WeatherModel.swift */; };
+		DC4DCF2B2C822F8F0017BA8C /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DCF2A2C822F8F0017BA8C /* NetworkRequest.swift */; };
+		DC4DCF2D2C8234300017BA8C /* NetworkDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DCF2C2C8234300017BA8C /* NetworkDataFetch.swift */; };
+		DC4DCF2F2C8241F10017BA8C /* NetworkImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DCF2E2C8241F10017BA8C /* NetworkImageRequest.swift */; };
+		DC4DCF342C824DF80017BA8C /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4DCF332C824DF80017BA8C /* OnBoardingViewController.swift */; };
 		DC9E90932C6190840053D2A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90922C6190840053D2A0 /* AppDelegate.swift */; };
 		DC9E90952C6190840053D2A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90942C6190840053D2A0 /* SceneDelegate.swift */; };
 		DC9E90972C6190840053D2A0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9E90962C6190840053D2A0 /* MainViewController.swift */; };
@@ -85,6 +90,11 @@
 		DC4DCF202C7D2D310017BA8C /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		DC4DCF232C7D4A1C0017BA8C /* ResultWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultWorkout.swift; sourceTree = "<group>"; };
 		DC4DCF252C81379B0017BA8C /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		DC4DCF272C822B5A0017BA8C /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		DC4DCF2A2C822F8F0017BA8C /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		DC4DCF2C2C8234300017BA8C /* NetworkDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetch.swift; sourceTree = "<group>"; };
+		DC4DCF2E2C8241F10017BA8C /* NetworkImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImageRequest.swift; sourceTree = "<group>"; };
+		DC4DCF332C824DF80017BA8C /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		DC9E908F2C6190840053D2A0 /* Fitness app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fitness app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC9E90922C6190840053D2A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC9E90942C6190840053D2A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -205,6 +215,40 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		DC4DCF292C822F780017BA8C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DC4DCF2A2C822F8F0017BA8C /* NetworkRequest.swift */,
+				DC4DCF2C2C8234300017BA8C /* NetworkDataFetch.swift */,
+				DC4DCF2E2C8241F10017BA8C /* NetworkImageRequest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		DC4DCF302C824D940017BA8C /* OnBoardingModule */ = {
+			isa = PBXGroup;
+			children = (
+				DC4DCF322C824DD10017BA8C /* Views */,
+				DC4DCF312C824DC10017BA8C /* Controllers */,
+			);
+			path = OnBoardingModule;
+			sourceTree = "<group>";
+		};
+		DC4DCF312C824DC10017BA8C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DC4DCF332C824DF80017BA8C /* OnBoardingViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DC4DCF322C824DD10017BA8C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		DC9E90862C6190840053D2A0 = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +271,7 @@
 			children = (
 				DC9E90AA2C6192FE0053D2A0 /* Aplication */,
 				DC9E90D52C6510340053D2A0 /* NavigationModule */,
+				DC4DCF302C824D940017BA8C /* OnBoardingModule */,
 				DC9E90A62C6192400053D2A0 /* MainModule */,
 				DC9E90CB2C6444990053D2A0 /* StatisticModule */,
 				DC9E90D82C6516740053D2A0 /* NewWorkoutModule */,
@@ -234,6 +279,7 @@
 				DC9E916D2C7515830053D2A0 /* TimerWorkoutModule */,
 				DC4DCF122C7937A00017BA8C /* ProfileModule */,
 				DC4DCF1C2C7BFE590017BA8C /* SettingsModule */,
+				DC4DCF292C822F780017BA8C /* Network */,
 				DC9E91312C6831E80053D2A0 /* Services */,
 				DC9E90AF2C6302A60053D2A0 /* Extensions */,
 				DC9E90A92C6192840053D2A0 /* SuportingFiles */,
@@ -441,6 +487,7 @@
 			children = (
 				DC9E912D2C67D1EB0053D2A0 /* WorkOutModel.swift */,
 				DC4DCF202C7D2D310017BA8C /* UserModel.swift */,
+				DC4DCF272C822B5A0017BA8C /* WeatherModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -621,12 +668,14 @@
 				DC4DCF162C7938170017BA8C /* ProfileViewController.swift in Sources */,
 				DC9E90C42C63E8E30053D2A0 /* UILabel + Extensions.swift in Sources */,
 				DC9E913A2C6862760053D2A0 /* CloseButton.swift in Sources */,
+				DC4DCF2B2C822F8F0017BA8C /* NetworkRequest.swift in Sources */,
 				DC4DCF262C81379B0017BA8C /* Notifications.swift in Sources */,
 				DC9E90972C6190840053D2A0 /* MainViewController.swift in Sources */,
 				DC9E913E2C6A94440053D2A0 /* SeparatorView.swift in Sources */,
 				DC9E90CA2C640BBA0053D2A0 /* WorkoutTableViewCell.swift in Sources */,
 				DC9E911F2C66F2120053D2A0 /* Int + Extensions.swift in Sources */,
 				DC9E90DC2C6516DB0053D2A0 /* NewWorkoutViewController.swift in Sources */,
+				DC4DCF2D2C8234300017BA8C /* NetworkDataFetch.swift in Sources */,
 				DC9E90C22C63ABAF0053D2A0 /* CalendarCollectionViewCell.swift in Sources */,
 				DC9E90C62C63ED970053D2A0 /* MainTableView.swift in Sources */,
 				DC9E916C2C72B5A20053D2A0 /* CustomAlert.swift in Sources */,
@@ -642,8 +691,11 @@
 				DC4DCF242C7D4A1C0017BA8C /* ResultWorkout.swift in Sources */,
 				DC9E90DE2C65261A0053D2A0 /* NameView.swift in Sources */,
 				DC4DCF182C7A60F90017BA8C /* ProfileCollectionView.swift in Sources */,
+				DC4DCF282C822B5A0017BA8C /* WeatherModel.swift in Sources */,
 				DC9E91712C7516730053D2A0 /* TimerWorkoutViewController.swift in Sources */,
 				DC9E90D12C644CE20053D2A0 /* StatisticTableView.swift in Sources */,
+				DC4DCF342C824DF80017BA8C /* OnBoardingViewController.swift in Sources */,
+				DC4DCF2F2C8241F10017BA8C /* NetworkImageRequest.swift in Sources */,
 				DC9E90C82C63F3250053D2A0 /* StackView + Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
