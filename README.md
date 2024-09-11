@@ -20,7 +20,7 @@ Screenshots
 <img width="261" alt="Снимок экрана 2024-09-10 в 9 18 40 PM" src="https://github.com/user-attachments/assets/b1185004-4901-4531-a177-dd4a43f51913">
 <img width="260" alt="Снимок экрана 2024-09-10 в 9 18 25 PM" src="https://github.com/user-attachments/assets/7e182803-01f6-427c-a0a5-5e4464ead9ed">
 
-![Simulator Screenshot - iPhone 15 Pro - 2024-09-10 at 21 22 36](https://github.com/user-attachments/assets/173427fb-b7bc-4152-9cb9-d81db54d978c)
-![Simulator Screenshot - iPhone 15 Pro - 2024-09-10 at 21 22 27](https://github.com/user-attachments/assets/b655f776-4e5e-41a4-b463-00560ce81fdd)
-![Simulator Screenshot - iPhone 15 Pro - 2024-09-10 at 21 22 15](https://github.com/user-attachments/assets/f3a84a64-ab53-470d-aa45-394e04464ef8)
-![Simulator Screenshot - iPhone 15 Pro - 2024-09-10 at 21 22 04](https://github.com/user-attachments/assets/e8815cc3-d0b0-41bc-81bd-fc22a1c43aec)
+<img width="263" alt="Снимок экрана 2024-09-10 в 9 24 43 PM" src="https://github.com/user-attachments/assets/8feca083-e0ee-4b2e-9c9b-a4d91dd5706f">
+<img width="260" alt="Снимок экрана 2024-09-10 в 9 24 25 PM" src="https://github.com/user-attachments/assets/e3728d15-638c-4f2f-8fba-763982b69b4a">
+<img width="261" alt="Снимок экрана 2024-09-10 в 9 24 06 PM" src="https://github.com/user-attachments/assets/0aa014d6-efe2-4702-8bc5-8000e38722af">
+
